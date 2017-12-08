@@ -1,0 +1,178 @@
+<!--
+   Created by IFML2NG2 on 2017/12/08 12:31:18
+-->
+
+<div class="col-md-12">
+
+	<!-- PROTECTED REGION ID lentBooks ENABLED START -->
+	<!-- PROTECTED REGION END -->
+	
+	<div name="content">
+	 	<div name="list" *ngIf="!_displayPropertiesService.displayProperties.isMobile || (_displayPropertiesService.displayProperties.isMobile && !selectedLentBooksBinding)">
+	 	        		<search-component [searchSpace]="advancedSearchSpace" [title]="'Search'" (onFilterUpdate)="filterUpdated($event)"></search-component>
+	 		<table id="_P27lgIC_Eea2S59Os6LSKA" name="lentBooks" [ngClass]="_displayPropertiesService.displayProperties.tableClass">
+	 			<thead>
+	 	<th>
+	 		{{_resourceService.getLangString('bookId')}}
+	 	</th>
+	 	<th>
+	 		{{_resourceService.getLangString('bookStatus')}}
+	 	</th>
+	 	<th>
+	 		{{_resourceService.getLangString('isbn')}}
+	 	</th>
+	 	<th>
+	 		{{_resourceService.getLangString('title')}}
+	 	</th>
+	 	<th>
+	 		{{_resourceService.getLangString('author')}}
+	 	</th>
+	 	<th>
+	 		{{_resourceService.getLangString('studentId')}}
+	 	</th>
+	 	<th>
+	 		{{_resourceService.getLangString('firstname')}}
+	 	</th>
+	 	<th>
+	 		{{_resourceService.getLangString('lastname')}}
+	 	</th>
+	 	<th>
+	 		{{_resourceService.getLangString('studentStatus')}}
+	 	</th>
+	 	<th>
+	 		{{_resourceService.getLangString('until')}}
+	 	</th>
+	 	</thead>
+	 	<tbody>
+	 	<tr *ngFor="#el of lentBooksBinding| lentBooksFilter: filterBy" (click)="onSelect(el)" [class.info]="el === selectedLentBooksBinding">
+	 	<td>
+	 		{{el.lentBook.bookId}}
+	 	</td>
+	 	<td>
+	 		{{el.lentBook.bookStatus}}
+	 	</td>
+	 	<td>
+	 		{{el.lentBook.bookInfo.isbn}}
+	 	</td>
+	 	<td>
+	 		{{el.lentBook.bookInfo.title}}
+	 	</td>
+	 	<td>
+	 		{{el.lentBook.bookInfo.author}}
+	 	</td>
+	 	<td>
+	 		{{el.lentBy.studentId}}
+	 	</td>
+	 	<td>
+	 		{{el.lentBy.firstname}}
+	 	</td>
+	 	<td>
+	 		{{el.lentBy.lastname}}
+	 	</td>
+	 	<td>
+	 		{{el.lentBy.studentStatus}}
+	 	</td>
+	 	<td>
+	 		{{el.until}}
+	 	</td>
+	 				</tr>
+	 			</tbody>
+	 		</table>
+	 	</div>
+	 	<div id="actionArea" name="actionArea">
+	 	<div name="mobileDetails" *ngIf="_displayPropertiesService.displayProperties.isMobile && selectedLentBooksBinding" [ngClass]="_displayPropertiesService.displayProperties.hideOnDesktop">
+	 		<div style="margin-bottom:5px">	
+	 			<button type="button" class="btn btn-default" (click)="onSelect(selectedLentBooksBinding)"> 
+	 				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> {{_resourceService.getLangString('back')}}
+	 			</button>    		
+	 		</div>
+	 		<div name="detailsTable">
+	 			<table [ngClass]="_displayPropertiesService.displayProperties.tableClass">
+	 	<tr>
+	 		<th>
+	 			{{_resourceService.getLangString('bookId')}}
+	 		</th>
+	 		<td>
+	 			{{selectedLentBooksBinding.lentBook.bookId}}
+	 		</td>
+	 	</tr>
+	 	<tr>
+	 		<th>
+	 			{{_resourceService.getLangString('bookStatus')}}
+	 		</th>
+	 		<td>
+	 			{{selectedLentBooksBinding.lentBook.bookStatus}}
+	 		</td>
+	 	</tr>
+	 	<tr>
+	 		<th>
+	 			{{_resourceService.getLangString('isbn')}}
+	 		</th>
+	 		<td>
+	 			{{selectedLentBooksBinding.lentBook.bookInfo.isbn}}
+	 		</td>
+	 	</tr>
+	 	<tr>
+	 		<th>
+	 			{{_resourceService.getLangString('title')}}
+	 		</th>
+	 		<td>
+	 			{{selectedLentBooksBinding.lentBook.bookInfo.title}}
+	 		</td>
+	 	</tr>
+	 	<tr>
+	 		<th>
+	 			{{_resourceService.getLangString('author')}}
+	 		</th>
+	 		<td>
+	 			{{selectedLentBooksBinding.lentBook.bookInfo.author}}
+	 		</td>
+	 	</tr>
+	 	<tr>
+	 		<th>
+	 			{{_resourceService.getLangString('studentId')}}
+	 		</th>
+	 		<td>
+	 			{{selectedLentBooksBinding.lentBy.studentId}}
+	 		</td>
+	 	</tr>
+	 	<tr>
+	 		<th>
+	 			{{_resourceService.getLangString('firstname')}}
+	 		</th>
+	 		<td>
+	 			{{selectedLentBooksBinding.lentBy.firstname}}
+	 		</td>
+	 	</tr>
+	 	<tr>
+	 		<th>
+	 			{{_resourceService.getLangString('lastname')}}
+	 		</th>
+	 		<td>
+	 			{{selectedLentBooksBinding.lentBy.lastname}}
+	 		</td>
+	 	</tr>
+	 	<tr>
+	 		<th>
+	 			{{_resourceService.getLangString('studentStatus')}}
+	 		</th>
+	 		<td>
+	 			{{selectedLentBooksBinding.lentBy.studentStatus}}
+	 		</td>
+	 	</tr>
+	 	
+	 		<tr>
+	 			<th>
+	 				{{_resourceService.getLangString('until')}}
+	 			</th>
+	 			<td>
+	 				{{selectedLentBooksBinding.until}}
+	 			</td>
+	 		</tr>
+	 			</table>
+	 		</div>
+	 	</div>
+	 	<button type="button" class="btn btn-default" (click)="extendBook()" >{{_resourceService.getLangString('extendBook')}}</button>
+	 	</div>
+	</div>
+</div>

@@ -1,0 +1,22 @@
+<!--
+   Created by IFML2NG2 on 2017/12/08 12:31:18
+-->
+
+<nav [ngClass]="_displayPropertiesService.displayProperties.navbarContainerClass"> 
+  <div [ngClass]="_displayPropertiesService.displayProperties.navbarWrapperClass"> 
+    <div [ngClass]="_displayPropertiesService.displayProperties.navbarHeaderClass"> 
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-nav"> <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="\" class="navbar-brand">LibSoft</a>
+    </div>
+    <div [ngClass]="_displayPropertiesService.displayProperties.navbarCollapseClass" id="bs-nav">
+      <ul [ngClass]="_displayPropertiesService.displayProperties.navbarItemListClass">
+        <li class="divLine borderSecondary" *ngFor="let entry of navItems">
+          <a href="{{entry.path}}" class="textPrimary">{{_resourceService.getLangString(entry.key)}}</a>
+        </li>
+      </ul>              
+    </div>
+  </div>
+</nav>

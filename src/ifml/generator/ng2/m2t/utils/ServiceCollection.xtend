@@ -10,6 +10,7 @@ class ServiceCollection {
 	private Service resource
 	private Service displayProperties
 	private Service profile
+	private Service speech
 	private ArrayList<Service> services = new ArrayList<Service>()
 	
 	private ArrayList<Service> tempArray = new ArrayList<Service>()
@@ -65,6 +66,10 @@ class ServiceCollection {
 		return resource
 	}
 	
+	def getSpeech(){
+		return speech
+	}
+	
 	def getServices(){
 		tempArray.clear;
 		for(service: services){
@@ -84,6 +89,9 @@ class ServiceCollection {
 		}
 		if(resource != null){
 			tempArray.add(resource)
+		}
+		if(speech != null){
+			tempArray.add(speech)
 		}
 		return tempArray
 	}

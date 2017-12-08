@@ -1,0 +1,97 @@
+<!--
+   Created by IFML2NG2 on 2017/12/08 12:31:18
+-->
+
+<div class="col-md-12">
+
+	<!-- PROTECTED REGION ID students ENABLED START -->
+	<!-- PROTECTED REGION END -->
+	
+	<div name="content">
+	 	<div name="list" *ngIf="!_displayPropertiesService.displayProperties.isMobile || (_displayPropertiesService.displayProperties.isMobile && !selectedStudentBinding)">
+	 	        		<search-component [searchSpace]="advancedSearchSpace" [title]="'Search'" (onFilterUpdate)="filterUpdated($event)"></search-component>
+	 		<table id="_gNqwUIXWEeaLl5C1A6b47w" name="studentList" [ngClass]="_displayPropertiesService.displayProperties.tableClass">
+	 			<thead>
+	 	<th>
+	 		{{_resourceService.getLangString('studentId')}}
+	 	</th>
+	 	<th>
+	 		{{_resourceService.getLangString('firstname')}}
+	 	</th>
+	 	<th>
+	 		{{_resourceService.getLangString('lastname')}}
+	 	</th>
+	 	<th>
+	 		{{_resourceService.getLangString('studentStatus')}}
+	 	</th>
+	 	</thead>
+	 	<tbody>
+	 	<tr *ngFor="#el of studentBinding| studentListFilter: filterBy" (click)="onSelect(el)" [class.info]="el === selectedStudentBinding">
+	 	<td>
+	 		{{el.studentId}}
+	 	</td>
+	 	<td>
+	 		{{el.firstname}}
+	 	</td>
+	 	<td>
+	 		{{el.lastname}}
+	 	</td>
+	 	<td>
+	 		{{el.studentStatus}}
+	 	</td>
+	 				</tr>
+	 			</tbody>
+	 		</table>
+	 	</div>
+	 	<div id="actionArea" name="actionArea">
+	 	<div name="mobileDetails" *ngIf="_displayPropertiesService.displayProperties.isMobile && selectedStudentBinding" [ngClass]="_displayPropertiesService.displayProperties.hideOnDesktop">
+	 		<div style="margin-bottom:5px">	
+	 			<button type="button" class="btn btn-default" (click)="onSelect(selectedStudentBinding)"> 
+	 				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> {{_resourceService.getLangString('back')}}
+	 			</button>    		
+	 		</div>
+	 		<div name="detailsTable">
+	 			<table [ngClass]="_displayPropertiesService.displayProperties.tableClass">
+	 	
+	 		<tr>
+	 			<th>
+	 				{{_resourceService.getLangString('studentId')}}
+	 			</th>
+	 			<td>
+	 				{{selectedStudentBinding.studentId}}
+	 			</td>
+	 		</tr>
+	 	
+	 		<tr>
+	 			<th>
+	 				{{_resourceService.getLangString('firstname')}}
+	 			</th>
+	 			<td>
+	 				{{selectedStudentBinding.firstname}}
+	 			</td>
+	 		</tr>
+	 	
+	 		<tr>
+	 			<th>
+	 				{{_resourceService.getLangString('lastname')}}
+	 			</th>
+	 			<td>
+	 				{{selectedStudentBinding.lastname}}
+	 			</td>
+	 		</tr>
+	 	
+	 		<tr>
+	 			<th>
+	 				{{_resourceService.getLangString('studentStatus')}}
+	 			</th>
+	 			<td>
+	 				{{selectedStudentBinding.studentStatus}}
+	 			</td>
+	 		</tr>
+	 			</table>
+	 		</div>
+	 	</div>
+	 	<button type="button" class="btn btn-default" (click)="viewStudentDetails()" [ngClass]="{disabled: !isSelectedStudentBinding}">{{_resourceService.getLangString('viewStudentDetails')}}</button>
+	 	</div>
+	</div>
+</div>

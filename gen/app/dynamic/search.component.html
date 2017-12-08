@@ -1,0 +1,20 @@
+<!--
+   Created by IFML2NG2 on 2017/12/08 12:31:18
+-->
+
+<div class="searchContainer" >
+    <div id="advancedSearch" class="row" *ngIf="_displayPropertiesService.displayProperties.isAdvancedUser">
+        <form action="" class="form-inline" style="margin-bottom:5px;">
+            <div class="form-group col-md-6" *ngFor="let field of searchSpace">
+                <div class="input-group">
+                    <input #advancedBox type="text" name="field.key" class="form-control" placeholder="{{_resourceService.getLangString(field.title)}}" (keyup)="updateFilterAdvanced(field.key, advancedBox.value)">
+                    <span class="input-group-addon glyphicon glyphicon-search" style="top:0;" aria-hidden="true"></span>
+                </div>  
+            </div>
+        </form>
+    </div>
+    <div id="simpleSearch" class="row" [ngClass]="_displayPropertiesService.displayProperties.searchInputGroupClass" *ngIf="!_displayPropertiesService.displayProperties.isAdvancedUser" style="margin-bottom:5px;">
+        <input #simpleBox type="text" class="form-control" placeholder="{{_resourceService.getLangString('search')}}" (keyup)="updateFilterSimple(simpleBox.value)">
+        <span class="input-group-addon glyphicon glyphicon-search" style="top:0;" aria-hidden="true"></span>
+    </div>  
+</div>

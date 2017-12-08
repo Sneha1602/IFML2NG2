@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <base href="/">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="styles/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="styles/navigation.css">
+
+    <!-- 1. Load libraries -->
+     <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+	<script src="node_modules/nools/nools.js"></script>
+	<script src="node_modules/mobile-detect/mobile-detect.js"></script>
+    
+
+    <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('app').catch(function(err){ console.error(err); });
+    </script>
+    
+  	<!-- 3. Add Provider API scripts -->
+  	<!-- PROTECTED REGION ID apis ENABLED START -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://download.affectiva.com/js/3.2/affdex.js"/> </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASK-EACxPsXrQauWhZ83HSYpuq7rh0yyg" async defer></script>
+
+  	<!-- PROTECTED REGION END -->
+  	
+  	<!-- 4. Add User Defined Stlyesheets -->
+  	<!-- PROTECTED REGION ID styles ENABLED START -->
+	<link rel="stylesheet" href="styles/table.css">
+	<link rel="stylesheet" href="styles/form.css">
+	<link rel="stylesheet" href="styles/details.css">		  	
+  	<!-- PROTECTED REGION END -->
+    
+  </head>
+  
+
+
+  <!-- 4. Display the application -->
+  <body  class="textPrimary backgroundPrimary">
+  	<h3></h3>
+    <my-app></my-app>
+  </body>
+
+</html>

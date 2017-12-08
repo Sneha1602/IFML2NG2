@@ -1,0 +1,46 @@
+<!--
+   Created by IFML2NG2 on 2017/12/08 12:31:18
+-->
+
+<div class="col-md-12">
+
+	<!-- PROTECTED REGION ID studentDetails ENABLED START -->
+	<!-- PROTECTED REGION END -->
+	
+	<div name="content">
+	 	<table id="_LCX6cIXaEea82rBnn6BioA" name="studentDetail" [ngClass]="_displayPropertiesService.displayProperties.tableClass">
+	 	<tr>
+	 		<th>
+	 			{{_resourceService.getLangString('vStudentId')}}
+	 		</th>
+	 	<td>
+	 		{{selectedStudentBinding.studentId}}
+	 	</td>
+	 	</tr>
+	 	<tr>
+	 		<th>
+	 			{{_resourceService.getLangString('vStudentFirstname')}}
+	 		</th>
+	 	<td>
+	 		{{selectedStudentBinding.firstname}}
+	 	</td>
+	 	</tr>
+	 	<tr>
+	 		<th>
+	 			{{_resourceService.getLangString('vStudentLastname')}}
+	 		</th>
+	 	<td>
+	 		{{selectedStudentBinding.lastname}}
+	 	</td>
+	 	</tr>
+	 	<tr>
+	 		<th>
+	 			{{_resourceService.getLangString('vStudentStatus')}}
+	 		</th>
+	 	<td>
+	 		{{selectedStudentBinding.studentStatus}}
+	 	</td>
+	 	</tr>
+	 	</table>
+	</div>
+</div>

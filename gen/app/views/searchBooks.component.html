@@ -1,0 +1,96 @@
+<!--
+   Created by IFML2NG2 on 2017/12/08 12:31:18
+-->
+
+<div class="col-md-12">
+
+	<!-- PROTECTED REGION ID searchBooks ENABLED START -->
+	<!-- PROTECTED REGION END -->
+	
+	<div name="content">
+	 	<div name="list" *ngIf="!_displayPropertiesService.displayProperties.isMobile || (_displayPropertiesService.displayProperties.isMobile && !selectedBookBinding)">
+	 	        		<search-component [searchSpace]="advancedSearchSpace" [title]="'Search'" (onFilterUpdate)="filterUpdated($event)"></search-component>
+	 		<table id="_nhxOsIC1Eea2S59Os6LSKA" name="inventoryList" [ngClass]="_displayPropertiesService.displayProperties.tableClass">
+	 			<thead>
+	 	<th>
+	 		{{_resourceService.getLangString('isbn')}}
+	 	</th>
+	 	<th>
+	 		{{_resourceService.getLangString('title')}}
+	 	</th>
+	 	<th>
+	 		{{_resourceService.getLangString('author')}}
+	 	</th>
+	 	<th>
+	 		{{_resourceService.getLangString('bookStatus')}}
+	 	</th>
+	 	</thead>
+	 	<tbody>
+	 	<tr *ngFor="#el of bookBinding| inventoryListFilter: filterBy" (click)="onSelect(el)" [class.info]="el === selectedBookBinding">
+	 	<td>
+	 		{{el.bookInfo.isbn}}
+	 	</td>
+	 	<td>
+	 		{{el.bookInfo.title}}
+	 	</td>
+	 	<td>
+	 		{{el.bookInfo.author}}
+	 	</td>
+	 	<td>
+	 		{{el.bookStatus}}
+	 	</td>
+	 				</tr>
+	 			</tbody>
+	 		</table>
+	 	</div>
+	 	<div id="actionArea" name="actionArea">
+	 	<div name="mobileDetails" *ngIf="_displayPropertiesService.displayProperties.isMobile && selectedBookBinding" [ngClass]="_displayPropertiesService.displayProperties.hideOnDesktop">
+	 		<div style="margin-bottom:5px">	
+	 			<button type="button" class="btn btn-default" (click)="onSelect(selectedBookBinding)"> 
+	 				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> {{_resourceService.getLangString('back')}}
+	 			</button>    		
+	 		</div>
+	 		<div name="detailsTable">
+	 			<table [ngClass]="_displayPropertiesService.displayProperties.tableClass">
+	 	<tr>
+	 		<th>
+	 			{{_resourceService.getLangString('isbn')}}
+	 		</th>
+	 		<td>
+	 			{{selectedBookBinding.bookInfo.isbn}}
+	 		</td>
+	 	</tr>
+	 	<tr>
+	 		<th>
+	 			{{_resourceService.getLangString('title')}}
+	 		</th>
+	 		<td>
+	 			{{selectedBookBinding.bookInfo.title}}
+	 		</td>
+	 	</tr>
+	 	<tr>
+	 		<th>
+	 			{{_resourceService.getLangString('author')}}
+	 		</th>
+	 		<td>
+	 			{{selectedBookBinding.bookInfo.author}}
+	 		</td>
+	 	</tr>
+	 	
+	 		<tr>
+	 			<th>
+	 				{{_resourceService.getLangString('bookStatus')}}
+	 			</th>
+	 			<td>
+	 				{{selectedBookBinding.bookStatus}}
+	 			</td>
+	 		</tr>
+	 			</table>
+	 		</div>
+	 	</div>
+	 	<button type="button" class="btn btn-default" (click)="issueBook()" *ngIf="_authenticationService.boolCheckPrivilegesIncludeOne([{role:'staff'}])" [ngClass]="{disabled: !isSelectedBookBinding}">{{_resourceService.getLangString('issueBook')}}</button>
+	 	<button type="button" class="btn btn-default" (click)="reserveBook()" *ngIf="_authenticationService.boolCheckPrivilegesIncludeOne([{role:'student'}])" [ngClass]="{disabled: !isSelectedBookBinding}">{{_resourceService.getLangString('reserveBook')}}</button>
+	 	<button type="button" class="btn btn-default" (click)="returnBook()" *ngIf="_authenticationService.boolCheckPrivilegesIncludeOne([{role:'staff'}])" [ngClass]="{disabled: !isSelectedBookBinding}">{{_resourceService.getLangString('returnBook')}}</button>
+	 	</div>
+	</div>
+</div>

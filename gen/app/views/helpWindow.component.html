@@ -1,0 +1,55 @@
+<!--
+   Created by IFML2NG2 on 2017/12/08 12:31:18
+-->
+
+<div class="col-md-12">
+
+	<!-- PROTECTED REGION ID helpWindow ENABLED START -->
+
+			<h1> This is the Service Point </h1>		  	
+
+	<!-- PROTECTED REGION END -->
+	
+	<div name="content">
+	 	<form id="_Lsyu0FW_Eee_i6NdnvfQJg" name="helpForm" class="form-horizontal">
+	 	
+	 	<!-- PROTECTED REGION ID helpForm ENABLED START -->
+
+	 		<h3> Ask a question when you are frustrated:  </h3>
+	
+	 			  	
+	 	<!-- PROTECTED REGION END -->
+	 	<div class="form-group">
+	 		<label for="_NaPvIFW_Eee_i6NdnvfQJg" class="col-sm-2 control-label">{{_resourceService.getLangString('question')}}</label>
+	 		<div class="col-sm-10">
+	 			<input type="text" class="form-control" id="_NaPvIFW_Eee_i6NdnvfQJg" [(ngModel)]="question">
+	 		</div>
+	 	</div>
+	 	<div class="form-group">
+	 		<div class="col-sm-offset-2 col-sm-10">
+	 			<button id="_N4oe0FXAEee_i6NdnvfQJg" name="submitQuestion" (click)="submitQuestion()" type="submit" class="btn btn-default">{{_resourceService.getLangString('submitQuestion')}}</button>
+	 		</div>
+	 	</div>
+	 	</form>
+	 	<form id="_MjqscFW_Eee_i6NdnvfQJg" name="learnPlaces" class="form-horizontal">
+	 	
+	 	<!-- PROTECTED REGION ID learnPlaces ENABLED START -->
+
+            <h3> Watch out for our new outdoor learning locations: </h3>
+	 			  		  	
+	 			  	
+	 	<!-- PROTECTED REGION END -->
+	 	<div class="form-group">
+	 		<label for="_OIi_kFW_Eee_i6NdnvfQJg" class="col-sm-2 control-label">{{_resourceService.getLangString('location')}}</label>
+	 		<div class="col-sm-10">
+	 			<input type="text" class="form-control" id="_OIi_kFW_Eee_i6NdnvfQJg" [(ngModel)]="location">
+	 		</div>
+	 	</div>
+	 	<div class="form-group">
+	 		<div class="col-sm-offset-2 col-sm-10">
+	 			<button id="_OjeyoFXAEee_i6NdnvfQJg" name="findClosestLocation" (click)="findClosestLocation()" type="submit" class="btn btn-default">{{_resourceService.getLangString('findClosestLocation')}}</button>
+	 		</div>
+	 	</div>
+	 	</form>
+	</div>
+</div>
