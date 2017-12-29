@@ -30,7 +30,8 @@
 .cgrey.table {
     border-collapse: collapse;
     background: #fff;
-    overflow: hidden;
+    overflow: visible;
+    cellspacing: "10"
 }
 .cgrey.table thead th {
     background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #8C8C8C), color-stop(1, #7D7D7D));

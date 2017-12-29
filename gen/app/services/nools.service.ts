@@ -7,7 +7,6 @@ import { DisplayProperties } from '../helper/displayProperties';
 import { ResourceService } from './resource.service';
 import { DisplayPropertiesService } from '../services/displayProperties.service';
 import { LoggerService } from './logger.service';
-import { SpeechService } from './speech.service';
 
 declare var nools: any;
 declare var $: any;
@@ -24,7 +23,6 @@ export class NoolsService {
 		private _Router: Router,
 		private _LoggerService: LoggerService,
 		private _ResourceService: ResourceService,
-		private _SpeechService: SpeechService,
 		private _DisplayPropertiesService: DisplayPropertiesService){
 		this.flow = nools.flow("Profile Evaluation", function(flow){
 			flow.rule("Lang de-de", {salience:1},[Profile,"m","m.getUser().getLanguage() == 'dede'"], function(facts){
@@ -77,7 +75,7 @@ export class NoolsService {
 				_DisplayPropertiesService.setProperty('headerBarClass','hideElement backgroundSecondary borderSecondary');
 				_DisplayPropertiesService.setProperty('routerOutletClass','col-md-12');
 				_DisplayPropertiesService.setProperty('hideOnMobile','hideElement backgroundSecondary borderSecondary');
-				_DisplayPropertiesService.setProperty('navbarContainerClass','navbar navbar-default navbar-custom backgroundSecondary borderSecondary');
+				_DisplayPropertiesService.setProperty('navbarContainerClass','sidebar-navbar col-md-2 backgroundSecondary borderSecondary');
 				_DisplayPropertiesService.setProperty('navbarWrapperClass','container-fluid backgroundSecondary borderSecondary');
 				_DisplayPropertiesService.setProperty('navbarHeaderClass','navbar-header backgroundSecondary borderSecondary');
 				_DisplayPropertiesService.setProperty('navbarCollapseClass','navbar-collapse collapse backgroundSecondary borderSecondary');

@@ -14,15 +14,13 @@ var profile_1 = require('../context/profile/profile');
 var resource_service_1 = require('./resource.service');
 var displayProperties_service_1 = require('../services/displayProperties.service');
 var logger_service_1 = require('./logger.service');
-var speech_service_1 = require('./speech.service');
 var NoolsService = (function () {
-    function NoolsService(dcl, injector, _Router, _LoggerService, _ResourceService, _SpeechService, _DisplayPropertiesService) {
+    function NoolsService(dcl, injector, _Router, _LoggerService, _ResourceService, _DisplayPropertiesService) {
         this.dcl = dcl;
         this.injector = injector;
         this._Router = _Router;
         this._LoggerService = _LoggerService;
         this._ResourceService = _ResourceService;
-        this._SpeechService = _SpeechService;
         this._DisplayPropertiesService = _DisplayPropertiesService;
         this.flow = nools.flow("Profile Evaluation", function (flow) {
             flow.rule("Lang de-de", { salience: 1 }, [profile_1.Profile, "m", "m.getUser().getLanguage() == 'dede'"], function (facts) {
@@ -75,7 +73,7 @@ var NoolsService = (function () {
                 _DisplayPropertiesService.setProperty('headerBarClass', 'hideElement backgroundSecondary borderSecondary');
                 _DisplayPropertiesService.setProperty('routerOutletClass', 'col-md-12');
                 _DisplayPropertiesService.setProperty('hideOnMobile', 'hideElement backgroundSecondary borderSecondary');
-                _DisplayPropertiesService.setProperty('navbarContainerClass', 'navbar navbar-default navbar-custom backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('navbarContainerClass', 'sidebar-navbar col-md-2 backgroundSecondary borderSecondary');
                 _DisplayPropertiesService.setProperty('navbarWrapperClass', 'container-fluid backgroundSecondary borderSecondary');
                 _DisplayPropertiesService.setProperty('navbarHeaderClass', 'navbar-header backgroundSecondary borderSecondary');
                 _DisplayPropertiesService.setProperty('navbarCollapseClass', 'navbar-collapse collapse backgroundSecondary borderSecondary');
@@ -107,7 +105,7 @@ var NoolsService = (function () {
     };
     NoolsService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [core_1.DynamicComponentLoader, core_1.Injector, router_1.Router, logger_service_1.LoggerService, resource_service_1.ResourceService, speech_service_1.SpeechService, displayProperties_service_1.DisplayPropertiesService])
+        __metadata('design:paramtypes', [core_1.DynamicComponentLoader, core_1.Injector, router_1.Router, logger_service_1.LoggerService, resource_service_1.ResourceService, displayProperties_service_1.DisplayPropertiesService])
     ], NoolsService);
     return NoolsService;
 }());

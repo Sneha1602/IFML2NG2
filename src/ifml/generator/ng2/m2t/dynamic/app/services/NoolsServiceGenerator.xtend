@@ -39,7 +39,6 @@ class NoolsServiceGenerator extends AbstractFileGenerator<Document> {
 			import { ResourceService } from './resource.service';
 			import { «ServiceCollection.sharedInstance.displayProperties.name.toFirstUpper» } from '..«ServiceCollection.sharedInstance.displayProperties.location»';
 			import { LoggerService } from './logger.service';
-			import { SpeechService } from './speech.service';
 			
 			declare var nools: any;
 			declare var $: any;
@@ -56,7 +55,6 @@ class NoolsServiceGenerator extends AbstractFileGenerator<Document> {
 					private _Router: Router,
 					private _LoggerService: LoggerService,
 					private _ResourceService: ResourceService,
-					private _SpeechService: SpeechService,
 					private _«ServiceCollection.sharedInstance.displayProperties.name.toFirstUpper»: «ServiceCollection.sharedInstance.displayProperties.name.toFirstUpper»){
 					this.flow = nools.flow("«flow.attributes.getNamedItem("name").nodeValue»", function(flow){
 						«new NoolsRuleGenerator().generateCode(flow.childNodes, serviceMap, functionMap)»
