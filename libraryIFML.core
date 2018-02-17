@@ -60,7 +60,11 @@
         <parameters id="_7pnUwIaqEeaTJocisBH8lA" name="bookToIssueBinding">
           <type xsi:type="uml:Class" href="models/libraryUML_CD.uml#_8kpXIYCrEeakIrkbdVKNbg"/>
         </parameters>
+        <parameters id="_INUe4IC2Eea2S59Os6LSKA" name="bookBinding">
+          <type xsi:type="uml:Class" href="models/libraryUML_CD.uml#_8kpXIYCrEeakIrkbdVKNbg"/>
+        </parameters>
         <viewElementEvents xsi:type="ext:OnSubmitEvent" id="_sMO8cIDmEea8AL0yBf-zEA" name="issueBook">
+          <annotations text="&lt;&lt;activationExpression>> &lt;&lt;Parameter>>reservationBinding != null"/>
           <outInteractionFlows xsi:type="core:DataFlow" id="_yHA40IDmEea8AL0yBf-zEA" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.9"/>
         </viewElementEvents>
         <viewComponentParts xsi:type="ext:SimpleField" id="_r3EE4IC-Eea2S59Os6LSKA" name="bookISBN">
@@ -139,6 +143,7 @@
           <type xsi:type="uml:Class" href="libraryUML_CD.uml#_8kpXQoCrEeakIrkbdVKNbg"/>
         </parameters>
         <viewElementEvents xsi:type="ext:OnSelectEvent" id="_Qy4NgIarEeaTJocisBH8lA" name="issueBook">
+          <annotations text="&lt;&lt;activationExpression>> &lt;&lt;Parameter>>reservationBinding != null"/>
           <outInteractionFlows xsi:type="core:NavigationFlow" id="_WarjgIarEeaTJocisBH8lA" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.4">
             <parameterBindingGroup id="_injJAIarEeaTJocisBH8lA">
               <parameterBindings id="_mNFFQIarEeaTJocisBH8lA" sourceParameter="//@interactionFlowModel/@interactionFlowModelElements.4/@viewElements.0/@parameters.0" targetParameter="//@interactionFlowModel/@interactionFlowModelElements.12/@viewElements.0/@parameters.0"/>

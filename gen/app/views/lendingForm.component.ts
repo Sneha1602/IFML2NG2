@@ -1,5 +1,5 @@
 //
-// Created by IFML2NG2 on 2018/02/17 19:23:39
+// Created by IFML2NG2 on 2018/02/17 20:41:09
 //
 
 // Angular Imports
@@ -32,6 +32,8 @@ export class LendingFormComponent {
 	isSelectedReservationBinding:  boolean;
 	selectedBookToIssueBinding:  any;
 	isSelectedBookToIssueBinding:  boolean;
+	selectedBookBinding:  any;
+	isSelectedBookBinding:  boolean;
 	// bindings for fields in form
 		bookISBN: string;
 		studentID: string;
