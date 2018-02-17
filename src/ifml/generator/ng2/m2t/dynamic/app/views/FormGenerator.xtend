@@ -22,6 +22,17 @@ public class FormGenerator extends AbstractViewElementGenerator<FormImpl>{
 		'''
 		
 		for(field : fields){
+			if(field.name.equalsIgnoreCase("password")){
+				output += '''
+				<div class="form-group">
+					<label for="«field.id»" class="col-sm-2 control-label">{{_«ServiceCollection.sharedInstance.resource.name.toFirstLower».getLangString('«field.name»')}}</label>
+					<div class="col-sm-10">
+						<input type="password" class="form-control" id="«field.id»" [(ngModel)]="«field.name»">
+					</div>
+				</div>
+			'''
+			}
+			else{
 			output += '''
 				<div class="form-group">
 					<label for="«field.id»" class="col-sm-2 control-label">{{_«ServiceCollection.sharedInstance.resource.name.toFirstLower».getLangString('«field.name»')}}</label>
@@ -30,6 +41,7 @@ public class FormGenerator extends AbstractViewElementGenerator<FormImpl>{
 					</div>
 				</div>
 			'''
+			}
 		}
 		
 		output += '''
