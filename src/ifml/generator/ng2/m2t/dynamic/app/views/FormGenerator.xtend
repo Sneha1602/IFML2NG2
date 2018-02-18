@@ -47,7 +47,16 @@ public class FormGenerator extends AbstractViewElementGenerator<FormImpl>{
 		output += '''
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<button id="«onSubmitEvent.id»" name="«onSubmitEvent.name»" (click)="«onSubmitEvent.name»()" type="submit" class="btn btn-default">{{_«ServiceCollection.sharedInstance.resource.name.toFirstLower».getLangString('«onSubmitEvent.name»')}}</button>
+						<button id="«onSubmitEvent.id»" name="«onSubmitEvent.name»" (click)="«onSubmitEvent.name»()" type="submit" class="btn btn-default"'''
+					if(!onSubmitEvent.annotations.isEmpty()){
+					for(annotation : onSubmitEvent.annotations){
+						if(annotation.text.contains("<<enablingExpression>")){
+							var expr = annotation.text.replace("<<enablingExpression>>","").trim();
+							output += '''[ngClass]="{disabled: !(«expr»)}"'''
+							}
+						}
+					}
+	output+='''>{{_«ServiceCollection.sharedInstance.resource.name.toFirstLower».getLangString('«onSubmitEvent.name»')}}</button>
 					</div>
 				</div>
 		'''
