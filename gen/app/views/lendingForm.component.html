@@ -1,5 +1,5 @@
 <!--
-   Created by IFML2NG2 on 2018/02/18 01:27:02
+   Created by IFML2NG2 on 2018/02/18 02:07:26
 -->
 
 <div class="col-md-12">
@@ -11,6 +11,8 @@
 	 	<form id="_qHY3AIC-Eea2S59Os6LSKA" name="lendingForm" class="form-horizontal">
 	 	
 	 	<!-- PROTECTED REGION ID lendingForm ENABLED START -->
+	 			  	
+	 			  	
 	 			  	
 	 			  	
 	 			  	
@@ -39,7 +41,7 @@
 	 	</div>
 	 	<div class="form-group">
 	 		<div class="col-sm-offset-2 col-sm-10">
-	 			<button id="_sMO8cIDmEea8AL0yBf-zEA" name="issueBook" (click)="issueBook()" type="submit" class="btn btn-default">{{_resourceService.getLangString('issueBook')}}</button>
+	 			<button id="_sMO8cIDmEea8AL0yBf-zEA" name="issueBook" (click)="issueBook()" type="submit" class="btn btn-default"[ngClass]="{disabled: !(bookISBN&&studentID&&dueDate)}">{{_resourceService.getLangString('issueBook')}}</button>
 	 						</div>
 	 					</div>
 	 	</form>
