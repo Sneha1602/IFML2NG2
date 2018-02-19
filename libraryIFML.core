@@ -62,8 +62,7 @@
           <type xsi:type="uml:Class" href="models/libraryUML_CD.uml#_8kpXIYCrEeakIrkbdVKNbg"/>
         </parameters>
         <viewElementEvents xsi:type="ext:OnSubmitEvent" id="_sMO8cIDmEea8AL0yBf-zEA" name="issueBook">
-          <annotations text="&lt;&lt;activationExpression>> &lt;&lt;Parameter>>reservationBinding != null"/>
-          <annotations text="&lt;&lt;activationExpression>> &lt;&lt;Parameter>>bookBinding != null"/>
+          <annotations text="&lt;&lt;enablingExpression>> bookISBN&amp;&amp;studentID&amp;&amp;dueDate"/>
           <outInteractionFlows xsi:type="core:DataFlow" id="_yHA40IDmEea8AL0yBf-zEA" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.9"/>
         </viewElementEvents>
         <viewComponentParts xsi:type="ext:SimpleField" id="_r3EE4IC-Eea2S59Os6LSKA" name="bookISBN">
@@ -86,7 +85,8 @@
           <type xsi:type="uml:Class" href="models/libraryUML_CD.uml#_8kpXMICrEeakIrkbdVKNbg"/>
         </parameters>
         <viewElementEvents xsi:type="ext:OnSelectEvent" id="_IN_owIDAEea2S59Os6LSKA" name="extendBook">
-          <outInteractionFlows xsi:type="core:DataFlow" id="_L9GXwIDAEea2S59Os6LSKA" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.8"/>
+          <annotations text="&lt;&lt;activationExpression>> &lt;&lt;Parameter>> lentBooksBinding"/>
+          <outInteractionFlows xsi:type="core:DataFlow" id="_IBx9JhUTEeiaUd16_zhMbg" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.8"/>
         </viewElementEvents>
         <viewComponentParts xsi:type="core:DataBinding" id="_UloJQIC_Eea2S59Os6LSKA" name="lentBooksBinding" domainConcept="//@domainModel/@domainElements.9">
           <subViewComponentParts xsi:type="core:VisualizationAttribute" id="_YqUtwIC_Eea2S59Os6LSKA" name="vLentBook" featureConcept="//@domainModel/@domainElements.11"/>

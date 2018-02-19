@@ -89,7 +89,7 @@ var NoolsService = (function () {
                 _DisplayPropertiesService.pushNavigation({ path: '/administration', key: 'administration' });
             });
             flow.rule("Navigation Student", { salience: 11 }, [profile_1.Profile, "m", "m.getApp().getUserRole() == 'student'"], function (facts) {
-                _DisplayPropertiesService.pushNavigation({ path: '/lentBook', key: 'lent' });
+                _DisplayPropertiesService.pushNavigation({ path: '/lentBooks', key: 'lent' });
                 _DisplayPropertiesService.pushNavigation({ path: '/searchBooks', key: 'books' });
             });
             flow.rule("Navigation Unregistered", { salience: 12 }, [profile_1.Profile, "m", "(m.getApp().getUserRole() != 'staff' && m.getApp().getUserRole() != 'student')"], function (facts) {

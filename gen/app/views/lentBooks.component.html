@@ -1,5 +1,5 @@
 <!--
-   Created by IFML2NG2 on 2018/02/18 02:07:26
+   Created by IFML2NG2 on 2018/02/19 02:22:08
 -->
 
 <div class="col-md-12">
@@ -172,7 +172,7 @@
 	 			</table>
 	 		</div>
 	 	</div>
-	 	<button type="button" class="btn btn-default" (click)="extendBook()" >{{_resourceService.getLangString('extendBook')}}</button>
+	 	<button type="button" class="btn btn-default" (click)="extendBook()" [ngClass]="{disabled: !isSelectedLentBooksBinding}">{{_resourceService.getLangString('extendBook')}}</button>
 	 	</div>
 	</div>
 </div>
