@@ -144,6 +144,10 @@ export class DataService {
     }
   }
 
+  extendBook(bookObj:Book, studentId: string, until: Date){
+   
+  }
+
 // Helper methods
 
   updateBookStatus(id:string, status:boolean){

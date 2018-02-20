@@ -94,7 +94,7 @@ export class NoolsService {
 				_DisplayPropertiesService.pushNavigation({path:'/lentBooks',key:'lent'});
 				_DisplayPropertiesService.pushNavigation({path:'/searchBooks',key:'books'});
 			});
-			flow.rule("Navigation Unregistered", {salience:12},[Profile,"m","(m.getApp().getUserRole() != 'staff' && m.getApp().getUserRole() != 'student')"], function(facts){
+			flow.rule("Navigation Unregistered", {salience:1},[Profile,"m","(m.getApp().getUserRole() != 'staff' && m.getApp().getUserRole() != 'student')"], function(facts){
 				_DisplayPropertiesService.clearNavigation();
 			});
 		});

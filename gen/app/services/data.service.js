@@ -113,6 +113,8 @@ var DataService = (function () {
             this.updateBookStatus(bookObj.bookId, false);
         }
     };
+    DataService.prototype.extendBook = function (bookObj, studentId, until) {
+    };
     // Helper methods
     DataService.prototype.updateBookStatus = function (id, status) {
         var books;

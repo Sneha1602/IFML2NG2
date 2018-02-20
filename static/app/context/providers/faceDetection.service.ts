@@ -9,10 +9,10 @@ declare var $: any;
                 var divRoot = $("#affdex_elements")[0];
 
                 // The captured frame's width in pixels
-                var width = 640;
+                var width = 1280;
 
                 // The captured frame's height in pixels
-                var height = 480;
+                var height = 1024;
 
                 /*
                 Face detector configuration - If not specified, defaults to

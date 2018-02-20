@@ -3,6 +3,7 @@ package ifml.generator.ng2.m2t.dynamic.app.dynamic;
 import IFML.Core.impl.ViewContainerImpl
 import ifml.generator.ng2.m2t.general.AbstractClassGenerator
 import ifml.generator.ng2.m2t.utils.ServiceCollection
+import IFML.Core.ViewContainer
 
 class NavbarGenerator extends AbstractClassGenerator<ViewContainerImpl[]> {
 	
@@ -46,6 +47,7 @@ class NavbarGenerator extends AbstractClassGenerator<ViewContainerImpl[]> {
 	}
 
 	override protected generateTemplate(ViewContainerImpl[] it) {
+		
 		'''
 	        <nav [ngClass]="_«ServiceCollection.sharedInstance.displayProperties.name.toFirstLower».displayProperties.navbarContainerClass"> 
 	          <div [ngClass]="_«ServiceCollection.sharedInstance.displayProperties.name.toFirstLower».displayProperties.navbarWrapperClass"> 
@@ -66,8 +68,8 @@ class NavbarGenerator extends AbstractClassGenerator<ViewContainerImpl[]> {
 	          </div>
 	        </nav>
 		'''
-	}
-
+		
+}
 	override protected fileName(ViewContainerImpl[] it) {
 		'''navigation.component'''
 	}

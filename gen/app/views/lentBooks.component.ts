@@ -1,5 +1,5 @@
 //
-// Created by IFML2NG2 on 2018/02/19 02:22:08
+// Created by IFML2NG2 on 2018/02/20 14:08:00
 //
 
 // Angular Imports
@@ -77,6 +77,7 @@ export class LentBooksComponent {
 	
 		extendBookActionAction(){
 			// PROTECTED REGION ID _JjYHUIDAEea2S59Os6LSKA.extendBookAction ENABLED START
+		this.vDueDate+=10;
 			// PROTECTED REGION END
 		}
 
