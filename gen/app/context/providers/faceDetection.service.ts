@@ -85,22 +85,29 @@ export class FaceDetectionService {
                 console.log("The detector reports stopped");
                 });
                 
-                this.mood = Mood.indifferent;
+                this.mood = null;
                 this.age = 0;
                 detector.addEventListener("onImageResultsSuccess", (faces: any, image: any, timestamp:any) => {
                         // console.log("Timestamp: " + timestamp.toFixed(2));
                         // console.log("Number of faces found: " + faces.length);
                         if (faces.length > 0) {
                                 this.faceDetected = true;
+                        }
                                 //If joy of the first face is over 50% then show in log
                                 // console.log("Emotions: " + JSON.stringify(faces[0].emotions, function(key, val) {
                                 // return val.toFixed ? Number(val.toFixed(0)) : val;
                                 // }));
-                                if(faces[0].emotions.anger>10){
-                                        this.mood = Mood.angry;
-                                }else if(faces[0].emotions.joy>15){
+                        else{
+                                this.faceDetected = false;
+                        }
+
+                                if(this.faceDetected){       
+                                        if(faces[0].emotions.anger>10){
+                                                this.mood = Mood.angry;
+                                         }
+                                         else if(faces[0].emotions.joy>15){
                                         this.mood = Mood.happy;
-                                }else{
+                                        }else{
                                         this.mood = Mood.indifferent;
                                 }
                                 // console.log(faces[0].appearance.age);

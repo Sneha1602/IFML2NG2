@@ -4,6 +4,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -185,7 +186,7 @@ table {
 }
 td,
 th {
-  padding: 0;
+  padding: 10;
 }
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
@@ -254,10 +255,12 @@ th {
   .table td,
   .table th {
     background-color: #fff !important;
+    padding: 10;
   }
   .table-bordered th,
   .table-bordered td {
     border: 1px solid #ddd !important;
+    paddings: 10;
   }
 }
 @font-face {
@@ -2272,7 +2275,7 @@ th {
 .table > thead > tr > td,
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
-  padding: 8px;
+  padding: 10px;
   line-height: 1.42857143;
   vertical-align: top;
   border-top: 1px solid #ddd;
@@ -2301,7 +2304,7 @@ th {
 .table-condensed > thead > tr > td,
 .table-condensed > tbody > tr > td,
 .table-condensed > tfoot > tr > td {
-  padding: 5px;
+  padding: 10px;
 }
 .table-bordered {
   border: 1px solid #ddd;

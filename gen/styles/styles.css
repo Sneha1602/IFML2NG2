@@ -35,7 +35,10 @@ body {
 .table-striped-dark > tbody > tr:nth-of-type(odd) {
   background-color: #323232;
 }
-
+.table td,
+.table th {
+    padding: 10px 10px;
+}
 .textPrimary{
   font-size:24px;
 }

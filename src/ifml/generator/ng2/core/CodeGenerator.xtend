@@ -19,6 +19,8 @@ import IFML.Extensions.impl.ListImpl
 import ifml.generator.ng2.m2t.dynamic.app.helper.PipeGenerator
 import ifml.generator.ng2.m2t.dynamic.app.MainGenerator
 import ifml.generator.ng2.m2t.dynamic.app.context.ContextServiceGenerator
+import org.eclipse.emf.common.util.EList
+import java.util.ArrayList
 
 class GeneratorCore {
 
@@ -50,6 +52,7 @@ class GeneratorCore {
 				]
 			]
 			// Dynamic Components
+			
 			new SearchComponentGenerator().generateCode(windows);
 			new NavbarGenerator().generateCode(windows);
 			// App

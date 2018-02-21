@@ -68,17 +68,18 @@ var FaceDetectionService = (function () {
             detector.addEventListener("onStopSuccess", function () {
                 console.log("The detector reports stopped");
             });
-            _this.mood = Mood_1.Mood.indifferent;
+            _this.mood = null;
             _this.age = 0;
             detector.addEventListener("onImageResultsSuccess", function (faces, image, timestamp) {
                 // console.log("Timestamp: " + timestamp.toFixed(2));
                 // console.log("Number of faces found: " + faces.length);
                 if (faces.length > 0) {
                     _this.faceDetected = true;
-                    //If joy of the first face is over 50% then show in log
-                    // console.log("Emotions: " + JSON.stringify(faces[0].emotions, function(key, val) {
-                    // return val.toFixed ? Number(val.toFixed(0)) : val;
-                    // }));
+                }
+                else {
+                    _this.faceDetected = false;
+                }
+                if (_this.faceDetected) {
                     if (faces[0].emotions.anger > 10) {
                         _this.mood = Mood_1.Mood.angry;
                     }

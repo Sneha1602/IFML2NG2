@@ -1,6 +1,10 @@
 .cblue.table {
     background: #fff;
 }
+.cblue.table td,
+.cblue.table th {
+    padding: 10px 10px;
+}
 .cblue.table thead th {
     background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #006699), color-stop(1, #00557F));
     background: -moz-linear-gradient( center top, #006699 5%, #00557F 100%);
@@ -33,6 +37,11 @@
     overflow: visible;
     cellspacing: "10"
 }
+
+.cgrey.table td,
+.cgrey.table th {
+    padding: 10px 10px;
+}
 .cgrey.table thead th {
     background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #8C8C8C), color-stop(1, #7D7D7D));
     background: -moz-linear-gradient( center top, #8C8C8C 5%, #7D7D7D 100%);
@@ -40,6 +49,7 @@
     background-color: #8C8C8C;
     color: #FFFFFF;
     border-left: 1px solid #A3A3A3;
+    
 }
 .cgrey.table thead th:first-child {
     border: none;
@@ -63,6 +73,10 @@
     border-collapse: collapse;
     background: #fff;
     overflow: hidden;
+}
+.cred.table td,
+.cred.table th {
+    padding: 10px 10px;
 }
 .cred.table thead th {
     background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #991821), color-stop(1, #80141C));
@@ -95,6 +109,10 @@
     background: #fff;
     overflow: hidden;
 }
+.cgreen.table td,
+.cgreen.table th {
+    padding: 10px 10px;
+}
 .cgreen.table thead th {
     background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #36752D), color-stop(1, #275420));
     background: -moz-linear-gradient( center top, #36752D 5%, #275420 100%);
@@ -102,6 +120,7 @@
     background-color: #36752D;
     color: #FFFFFF;
     border-left: 1px solid #36752D;
+    padding: 40px;
 }
 .cgreen.table thead th:first-child {
     border: none;
