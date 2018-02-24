@@ -48,7 +48,7 @@ exports.routes = [
     },
     {
         path: '',
-        redirectTo: '/home',
+        redirectTo: '/searchBooks',
         pathMatch: 'full'
     }
 ];

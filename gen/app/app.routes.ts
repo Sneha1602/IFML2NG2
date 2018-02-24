@@ -49,7 +49,7 @@ export const routes: RouterConfig = [
 	},
 	{
 		path: '',
-		redirectTo: '/home',
+		redirectTo: '/searchBooks',
 		pathMatch: 'full'
 	}
 ];

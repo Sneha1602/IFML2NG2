@@ -9,6 +9,9 @@ import { lang_IT_IT } from '../data/lang_IT_IT';
 import { Image } from '../data/image';
 import { LangString } from '../data/string';
 
+
+
+
 @Injectable()
 export class ResourceService {
     private images: Image[];
