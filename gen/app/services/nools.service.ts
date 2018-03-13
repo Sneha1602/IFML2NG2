@@ -59,19 +59,31 @@ export class NoolsService {
 				$('#_LCX6cIXaEea82rBnn6BioA').removeClass('dblue').removeClass('dred').removeClass('dgreen').removeClass('dgrey');
 				$('#_LCX6cIXaEea82rBnn6BioA').addClass('dred');
 			});
-			flow.rule("Platform Desktop", {salience:6},[Profile,"m","m.getPlatform().getDeviceType() == 'desktop'"], function(facts){
-				_DisplayPropertiesService.setProperty('headerBarClass','row backgroundSecondary divLine borderSecondary');
+			flow.rule("Platform Desktop Color Blind", {salience:6},[Profile,"m","(m.getApp().getUserRole() == 'staff' && m.getPlatform().getDeviceType() == 'desktop')"], function(facts){
+				_DisplayPropertiesService.setProperty('headerBarClass','row backgroundPrimary divLine borderPrimary');
 				_DisplayPropertiesService.setProperty('routerOutletClass','col-md-10');
 				_DisplayPropertiesService.setProperty('hideOnMobile','');
-				_DisplayPropertiesService.setProperty('navbarContainerClass','sidebar-navbar col-md-2 backgroundSecondary borderSecondary');
-				_DisplayPropertiesService.setProperty('navbarWrapperClass','sidebar-wrapper backgroundSecondary borderSecondary');
-				_DisplayPropertiesService.setProperty('navbarHeaderClass','hideElement backgroundSecondary borderSecondary');
-				_DisplayPropertiesService.setProperty('navbarCollapseClass','backgroundSecondary borderSecondary');
-				_DisplayPropertiesService.setProperty('navbarItemListClass','sidebar-nav textPrimary backgroundSecondary borderSecondary');
-				_DisplayPropertiesService.setProperty('searchInputGroupClass','input-group col-md-6 col-md-offset-4 backgroundSecondary borderSecondary');
+				_DisplayPropertiesService.setProperty('navbarContainerClass','sidebar-navbar col-md-2 backgroundPrimary borderPrimary');
+				_DisplayPropertiesService.setProperty('navbarWrapperClass','sidebar-wrapper backgroundPrimary  borderPrimary');
+				_DisplayPropertiesService.setProperty('navbarHeaderClass','hideElement backgroundPrimary borderPrimary');
+				_DisplayPropertiesService.setProperty('navbarCollapseClass','backgroundPrimary  borderPrimary');
+				_DisplayPropertiesService.setProperty('navbarItemListClass','sidebar-nav textSecondary backgroundPrimary borderPrimary');
+				_DisplayPropertiesService.setProperty('searchInputGroupClass','input-group col-md-6 col-md-offset-4 backgroundPrimary backgroundPrimary ');
 				_DisplayPropertiesService.setProperty('isMobile',false);
 			});
-			flow.rule("Platform Mobile", {salience:6},[Profile,"m","m.getPlatform().getDeviceType() == 'mobile'"], function(facts){
+			flow.rule("Platform Desktop not Color ", {salience:6},[Profile,"m","(m.getApp().getUserRole() == 'student' && m.getPlatform().getDeviceType() == 'desktop')"], function(facts){
+				_DisplayPropertiesService.setProperty('headerBarClass','row backgroundSecondary divLine borderPrimary');
+				_DisplayPropertiesService.setProperty('routerOutletClass','col-md-10');
+				_DisplayPropertiesService.setProperty('hideOnMobile','');
+				_DisplayPropertiesService.setProperty('navbarContainerClass','sidebar-navbar col-md-2 backgroundSecondary borderPrimary');
+				_DisplayPropertiesService.setProperty('navbarWrapperClass','sidebar-wrapper backgroundSecondary  borderPrimary');
+				_DisplayPropertiesService.setProperty('navbarHeaderClass','hideElement backgroundSecondary borderSecondary');
+				_DisplayPropertiesService.setProperty('navbarCollapseClass','backgroundSecondary  borderPrimary');
+				_DisplayPropertiesService.setProperty('navbarItemListClass','sidebar-nav textSecondary backgroundSecondary borderSecondary');
+				_DisplayPropertiesService.setProperty('searchInputGroupClass','input-group col-md-6 col-md-offset-4 backgroundSecondary backgroundPrimary ');
+				_DisplayPropertiesService.setProperty('isMobile',false);
+			});
+			flow.rule("Platform Mobile not Color Blind", {salience:6},[Profile,"m","(m.getPlatform().getDeviceType() == 'mobile' && m.getApp().getUserRole() == 'student')"], function(facts){
 				_DisplayPropertiesService.setProperty('headerBarClass','hideElement backgroundSecondary borderSecondary');
 				_DisplayPropertiesService.setProperty('routerOutletClass','col-md-12');
 				_DisplayPropertiesService.setProperty('hideOnMobile','hideElement backgroundSecondary borderSecondary');
@@ -81,6 +93,18 @@ export class NoolsService {
 				_DisplayPropertiesService.setProperty('navbarCollapseClass','navbar-collapse collapse backgroundSecondary borderSecondary');
 				_DisplayPropertiesService.setProperty('navbarItemListClass','nav navbar-nav backgroundSecondary textPrimary');
 				_DisplayPropertiesService.setProperty('searchInputGroupClass','input-group backgroundSecondary borderSecondary');
+				_DisplayPropertiesService.setProperty('isMobile',true);
+			});
+			flow.rule("Platform Mobile Color Blind", {salience:6},[Profile,"m","(m.getPlatform().getDeviceType() == 'mobile' && m.getApp().getUserRole() == 'staff')"], function(facts){
+				_DisplayPropertiesService.setProperty('headerBarClass','hideElement backgroundPrimary borderPrimary');
+				_DisplayPropertiesService.setProperty('routerOutletClass','col-md-12');
+				_DisplayPropertiesService.setProperty('hideOnMobile','hideElement backgroundPrimary borderPrimary');
+				_DisplayPropertiesService.setProperty('navbarContainerClass','sidebar-navbar col-md-2 backgroundPrimary borderPrimary');
+				_DisplayPropertiesService.setProperty('navbarWrapperClass','container-fluid backgroundPrimary borderPrimary');
+				_DisplayPropertiesService.setProperty('navbarHeaderClass','navbar-header backgroundPrimary borderPrimary');
+				_DisplayPropertiesService.setProperty('navbarCollapseClass','navbar-collapse collapse backgroundPrimary borderPrimary');
+				_DisplayPropertiesService.setProperty('navbarItemListClass','nav navbar-nav backgroundPrimary textPrimary');
+				_DisplayPropertiesService.setProperty('searchInputGroupClass','input-group backgroundPrimary borderPrimary');
 				_DisplayPropertiesService.setProperty('isMobile',true);
 			});
 			flow.rule("Navigation Staff", {salience:11},[Profile,"m","m.getApp().getUserRole() == 'staff'"], function(facts){
@@ -96,6 +120,12 @@ export class NoolsService {
 			});
 			flow.rule("Navigation Unregistered", {salience:1},[Profile,"m","(m.getApp().getUserRole() != 'staff' && m.getApp().getUserRole() != 'student')"], function(facts){
 				_DisplayPropertiesService.clearNavigation();
+			});
+			flow.rule("Age", {salience:2},[Profile,"m","m.getUser().getAge() >= 50"], function(facts){
+				_DisplayPropertiesService.setProperty('body','textPrimary backgroundPrimary');
+			});
+			flow.rule("Age less than", {salience:2},[Profile,"m","m.getUser().getAge() <= 49"], function(facts){
+				_DisplayPropertiesService.setProperty('body','textSecondary backgroundPrimary');
 			});
 		});
 	}

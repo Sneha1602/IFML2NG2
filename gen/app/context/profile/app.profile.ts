@@ -8,6 +8,7 @@ export class AppProfile {
 	private moodChecked: boolean;
 	private outsideChecked: boolean;
 	private userRole: string;
+	private colorBlind: boolean;
     
     constructor(){};
     
@@ -31,6 +32,13 @@ export class AppProfile {
 	
 	public getUserRole(): string{
 	    return this.userRole;
+	}
+	public setColorBlind(v: boolean){
+	    this.colorBlind = v;
+	};
+	
+	public getColorBlind(): boolean{
+	    return this.colorBlind;
 	}
 }
 

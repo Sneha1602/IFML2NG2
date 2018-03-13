@@ -48,6 +48,7 @@ export class ContextControllerService{
     private moodChecked: Subscription;
     private outsideChecked: Subscription;
     private userRole: Subscription;
+    private colorBlind: Subscription;
     
 	private timeInit: number = 0;      //initialization for the Timer
 	private timeFast: number = 750;    //update Time for the Fast Update in ms
@@ -146,6 +147,12 @@ export class ContextControllerService{
 				this.onModified();
 			}
 		});
+		this.colorBlind = this.appStateService.colorBlindSubject.subscribe(colorBlind => {
+			if(this.active){
+				this.profile.getApp().setColorBlind(colorBlind);
+				this.onModified();
+			}
+		});
 	
 		//Manager checks APIs fast
 		let timerFast = Observable.timer(this.timeInit,this.timeFast);
@@ -183,6 +190,7 @@ export class ContextControllerService{
 		this.geocodingService.getWeather();
 		this.deviceAPIService.getDeviceType();
 		this.appStateService.getMoodChecked();
+		this.appStateService.getColorBlind();
     }
     
     //returns Profile instance

@@ -9,6 +9,7 @@ import { StudentsComponent } from './views/students.component';
 import { StudentDetailsComponent } from './views/studentDetails.component';
 import { BookReservationsComponent } from './views/bookReservations.component';
 import { HelpWindowComponent } from './views/helpWindow.component';
+import { AdministrationComponent } from './views/administration.component';
 
 export const routes: RouterConfig = [
 	{
@@ -46,6 +47,10 @@ export const routes: RouterConfig = [
 	{
 		path: 'helpWindow',
 		component: HelpWindowComponent
+	},
+	{
+		path: 'administration',
+		component: AdministrationComponent
 	},
 	{
 		path: '',

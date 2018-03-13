@@ -26,6 +26,13 @@ var AppProfile = (function () {
     AppProfile.prototype.getUserRole = function () {
         return this.userRole;
     };
+    AppProfile.prototype.setColorBlind = function (v) {
+        this.colorBlind = v;
+    };
+    ;
+    AppProfile.prototype.getColorBlind = function () {
+        return this.colorBlind;
+    };
     return AppProfile;
 }());
 exports.AppProfile = AppProfile;

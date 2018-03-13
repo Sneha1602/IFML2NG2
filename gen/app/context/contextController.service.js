@@ -120,6 +120,12 @@ var ContextControllerService = (function () {
                 _this.onModified();
             }
         });
+        this.colorBlind = this.appStateService.colorBlindSubject.subscribe(function (colorBlind) {
+            if (_this.active) {
+                _this.profile.getApp().setColorBlind(colorBlind);
+                _this.onModified();
+            }
+        });
         //Manager checks APIs fast
         var timerFast = Rx_1.Observable.timer(this.timeInit, this.timeFast);
         timerFast.subscribe(function (t) {
@@ -152,6 +158,7 @@ var ContextControllerService = (function () {
         this.geocodingService.getWeather();
         this.deviceAPIService.getDeviceType();
         this.appStateService.getMoodChecked();
+        this.appStateService.getColorBlind();
     };
     //returns Profile instance
     ContextControllerService.prototype.getProfile = function () {

@@ -1,5 +1,7 @@
 		import { Injectable } from '@angular/core';
 		import { Router } from '@angular/router';
+		import { BingSpeechClient } from 'bingspeech-api-client';
+	
 		
 		//import { ProfileService } from '../services/profile.service';
 
@@ -10,13 +12,14 @@
 		    public role: string,
 		    public id: string,
 		    public firstname: string,
-		    public lastname: string) { }
+				public lastname: string,
+				public colorBlind: boolean) { }
 		}
 		
 		var users = [
-		  new User('admin','admin','staff', '', 'Admin', 'User'),
-		  new User('hstahl','hstahl','student', '6701277', 'Hagen', 'Stahl'),
-		  new User('rich','rich','student', '1231233', 'Richard', 'Roe')
+		  new User('admin','admin','staff', '', 'Admin', 'User', true),
+		  new User('hstahl','hstahl','student', '6701277', 'Hagen', 'Stahl', false),
+		  new User('rich','rich','student', '1231233', 'Richard', 'Roe', false)
 		];
 		
 		declare var $: any;
@@ -25,11 +28,11 @@
 		export class AuthenticationService {
 		
 		  public isLoggedIn: boolean;
-			
+			public speak: BingSpeechClient;
 		
 		  constructor(
-		    private _router: Router
-				
+				private _router: Router
+					
 				//,private profile: ProfileService
 			){
 		      this.isLoggedIn = false;
@@ -48,8 +51,8 @@
 		      localStorage.setItem('user', JSON.stringify(authenticatedUser));
 		      this._router.navigate(['login']);
 		      this.isLoggedIn = true;
-			  	localStorage.setItem('userRole', authenticatedUser.role);
-		      return true;
+					localStorage.setItem('userRole', authenticatedUser.role);
+			     return true;
 		    }
 		    return false;
 		  }
@@ -128,5 +131,11 @@
 		    }else{
 		      return false;
 		    }
-		  }
+			}
+			
+			getColorBlind(){
+				if (localStorage.getItem('user') !== null){
+					return JSON.parse(localStorage.getItem("user")).colorBlind;
+			}
+			}
 		}

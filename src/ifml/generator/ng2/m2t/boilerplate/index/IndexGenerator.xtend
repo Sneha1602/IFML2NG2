@@ -7,6 +7,7 @@ class IndexGenerator extends AbstractFileGenerator<String> {
 	override protected fileContents(String it) {
 
 		'''
+		<!DOCTYPE html>
 		<html>
 		  <head>
 		    <base href="/">
@@ -53,7 +54,8 @@ class IndexGenerator extends AbstractFileGenerator<String> {
 
 		
 		  <!-- 4. Display the application -->
-		  <body  class="textPrimary backgroundPrimary">
+		  
+		  
 		  	<h3>«it»</h3>
 		    <my-app></my-app>
 		  </body>

@@ -15,6 +15,7 @@ body {
   background-color: lightgrey; 
 }
 
+
 .backgroundSecondary li:hover{
   color: #999999;
   background-color: rgba(255,255,255,0.2); 
@@ -22,6 +23,10 @@ body {
 
 .textPrimary{
   color: black;
+}
+
+.textSecondary{
+	color: black;
 }
 
 .borderPrimary{
@@ -40,7 +45,7 @@ body {
     padding: 10px 10px;
 }
 .textPrimary{
-  font-size:24px;
+  font-size:25px;
 }
 
 .textSecondary{

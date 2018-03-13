@@ -33,7 +33,7 @@ exports.lang_EN_US = [
     { key: 'welcomeLibsoft', text: 'Welcome to Libsoft' },
     { key: 'vBookInfo', text: 'Book Info' },
     { key: 'vBookStatus', text: 'Status' },
-    { key: 'dueDate', text: 'due on' },
+    { key: 'dueDate', text: 'Due on' },
     { key: 'vStudentId', text: 'Student ID' },
     { key: 'vStudentFirstname', text: 'Firstname' },
     { key: 'vStudentLastname', text: 'Lastname' },
@@ -55,7 +55,8 @@ exports.lang_EN_US = [
     { key: 'lentBy.lastname', text: 'Lastname' },
     { key: 'vDueDate', text: 'Until' },
     { key: 'bookReservations', text: 'Reservations' },
-    { key: 'submitQuestion', text: 'submit Question' },
-    { key: 'findClosestLocation', text: 'find learning location' }
+    { key: 'submitQuestion', text: 'Submit Question' },
+    { key: 'findClosestLocation', text: 'Find learning location' },
+    { key: 'question', text: 'Question' }
 ];
 //# sourceMappingURL=lang_EN_US.js.map

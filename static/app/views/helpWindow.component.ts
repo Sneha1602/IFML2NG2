@@ -1,4 +1,4 @@
-// PROTECTED REGION ID _sCz-cFXAEee_i6NdnvfQJg.submitQuestion ENABLED START
+// PROTECTED REGION ID _sCz-cFXAEee_i6NdnvfQJg.submitQuestionAction ENABLED START
             this._router.navigate(['searchBooks']);
 // PROTECTED REGION END
 

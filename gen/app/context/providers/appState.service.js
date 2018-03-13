@@ -27,6 +27,8 @@ var AppStateService = (function () {
         this.outsideCheckedSubject = this._outsideCheckedSubject.asObservable();
         this._userRoleSubject = new Rx_1.BehaviorSubject("init");
         this.userRoleSubject = this._userRoleSubject.asObservable();
+        this._colorBlindSubject = new Rx_1.BehaviorSubject(false);
+        this.colorBlindSubject = this._colorBlindSubject.asObservable();
         this.moodChecked = false;
         this.outsideChecked = false;
         this.userRole = "none";
@@ -49,6 +51,11 @@ var AppStateService = (function () {
         }
         // PROTECTED REGION END
         this._userRoleSubject.next(this.userRole);
+    };
+    AppStateService.prototype.getColorBlind = function () {
+        // PROTECTED REGION ID colorBlind ENABLED START
+        // PROTECTED REGION END
+        this._colorBlindSubject.next(this.colorBlind);
     };
     AppStateService = __decorate([
         core_1.Injectable(), 

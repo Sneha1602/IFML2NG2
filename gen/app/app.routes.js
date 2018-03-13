@@ -9,6 +9,7 @@ var students_component_1 = require('./views/students.component');
 var studentDetails_component_1 = require('./views/studentDetails.component');
 var bookReservations_component_1 = require('./views/bookReservations.component');
 var helpWindow_component_1 = require('./views/helpWindow.component');
+var administration_component_1 = require('./views/administration.component');
 exports.routes = [
     {
         path: 'searchBooks',
@@ -45,6 +46,10 @@ exports.routes = [
     {
         path: 'helpWindow',
         component: helpWindow_component_1.HelpWindowComponent
+    },
+    {
+        path: 'administration',
+        component: administration_component_1.AdministrationComponent
     },
     {
         path: '',

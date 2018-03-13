@@ -25,6 +25,9 @@ export class AppStateService {
 	private userRole: string;
 	private _userRoleSubject: BehaviorSubject<string> = new BehaviorSubject("init");
 	public userRoleSubject: Observable<string> = this._userRoleSubject.asObservable();
+	private colorBlind: boolean;
+	private _colorBlindSubject: BehaviorSubject<boolean> = new BehaviorSubject(false);
+	public colorBlindSubject: Observable<boolean> = this._colorBlindSubject.asObservable();
 	
 	// PROTECTED REGION ID appState ENABLED START
 	// PROTECTED REGION END
@@ -64,6 +67,13 @@ export class AppStateService {
 		// PROTECTED REGION END
 		
 		this._userRoleSubject.next(this.userRole);
+	}
+	getColorBlind(){
+		
+		// PROTECTED REGION ID colorBlind ENABLED START
+		// PROTECTED REGION END
+		
+		this._colorBlindSubject.next(this.colorBlind);
 	}
 	
 	// PROTECTED REGION ID addMethods ENABLED START

@@ -179,6 +179,7 @@
     <interactionFlowModelElements xsi:type="core:IFMLAction" id="_slgb0FXAEee_i6NdnvfQJg" name="findLocationAction" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.13/@viewElements.1/@viewElementEvents.0/@outInteractionFlows.0">
       <outInteractionFlows xsi:type="core:NavigationFlow" id="_8ygO4FXAEee_i6NdnvfQJg" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.0"/>
     </interactionFlowModelElements>
+    <interactionFlowModelElements xsi:type="core:ViewContainer" id="_B8paIyAEEei-1tTjw7N_jQ" name="administration"/>
   </interactionFlowModel>
   <domainModel id="_EGEcMYDjEea11dlfBOUHWQ">
     <domainElements xsi:type="core:UMLDomainConcept" id="_EGONMIDjEea11dlfBOUHWQ" name="Book" dataBinding="//@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.0/@viewComponentParts.0">

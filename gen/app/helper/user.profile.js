@@ -6,6 +6,7 @@ var UserProfile = (function () {
         this.weakVision = w;
         this.computerSelfEfficiacy = c;
         this.isAdmin = false;
+        this.isColorBlind = false;
         this.language = 'enus';
         this.setAdminChecked(false);
         this.setLangChecked(false);
@@ -65,6 +66,13 @@ var UserProfile = (function () {
     UserProfile.prototype.getLanguage = function () {
         return this.language;
     };
+    UserProfile.prototype.getColorBlind = function () {
+        return this.isColorBlind;
+    };
+    UserProfile.prototype.setColorBlind = function (v) {
+        this.isColorBlind = v;
+    };
+    ;
     // Getters and Setters for flags that indicate if rule was already fired once
     UserProfile.prototype.setRoleChecked = function (v) {
         this.roleChecked = v;

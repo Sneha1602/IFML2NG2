@@ -1,5 +1,5 @@
 //
-// Created by IFML2NG2 on 2018/02/23 13:21:00
+// Created by IFML2NG2 on 2018/03/13 15:33:20
 //
 
 // Angular Imports
@@ -53,6 +53,7 @@ export class HelpWindowComponent {
 	
 		submitQuestionActionAction(){
 			// PROTECTED REGION ID _sCz-cFXAEee_i6NdnvfQJg.submitQuestionAction ENABLED START
+            this._router.navigate(['searchBooks']);
 			// PROTECTED REGION END
 		}
 	

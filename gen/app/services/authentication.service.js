@@ -12,21 +12,22 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 //import { ProfileService } from '../services/profile.service';
 var User = (function () {
-    function User(email, password, role, id, firstname, lastname) {
+    function User(email, password, role, id, firstname, lastname, colorBlind) {
         this.email = email;
         this.password = password;
         this.role = role;
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
+        this.colorBlind = colorBlind;
     }
     return User;
 }());
 exports.User = User;
 var users = [
-    new User('admin', 'admin', 'staff', '', 'Admin', 'User'),
-    new User('hstahl', 'hstahl', 'student', '6701277', 'Hagen', 'Stahl'),
-    new User('rich', 'rich', 'student', '1231233', 'Richard', 'Roe')
+    new User('admin', 'admin', 'staff', '', 'Admin', 'User', true),
+    new User('hstahl', 'hstahl', 'student', '6701277', 'Hagen', 'Stahl', false),
+    new User('rich', 'rich', 'student', '1231233', 'Richard', 'Roe', false)
 ];
 var AuthenticationService = (function () {
     function AuthenticationService(_router) {
@@ -120,6 +121,11 @@ var AuthenticationService = (function () {
         }
         else {
             return false;
+        }
+    };
+    AuthenticationService.prototype.getColorBlind = function () {
+        if (localStorage.getItem('user') !== null) {
+            return JSON.parse(localStorage.getItem("user")).colorBlind;
         }
     };
     AuthenticationService = __decorate([

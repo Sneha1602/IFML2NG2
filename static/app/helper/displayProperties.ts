@@ -2,7 +2,7 @@ export class DisplayProperties {
     private type: string;
     private role: string;
 	private temp: any;
-
+    private body: any;
     // [{path:<path>,text:<link text>}]
     private navigation: any;
 
@@ -41,6 +41,7 @@ export class DisplayProperties {
         this.routerOutletClass = '';
         this.hideOnMobile = '';
         this.hideOnDesktop = '';
+        this.body = '';
 
         //tables
         this.tableClass = 'table table-striped table-hover table-condensed'

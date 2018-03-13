@@ -2,22 +2,25 @@
 export class UserProfile{
     private role: string;
     private isAdmin: boolean;
+    private isColorBlind: boolean;
     private weakVision: boolean;
     private computerSelfEfficiacy: string;
     private language: string;
+    
 
     private roleChecked: boolean;
     private langChecked: boolean;
     private adminChecked: boolean;
     private weakVisionChecked: boolean;
     private computerSelfEfficiacyChecked: boolean;
-
+    private colorBlindChecked: boolean
     constructor(r:string,w:boolean,c:string)
     {
         this.role = r;
         this.weakVision = w;
         this.computerSelfEfficiacy = c;
         this.isAdmin = false;
+        this.isColorBlind = false;
         
         this.language = 'enus';
 
@@ -26,6 +29,7 @@ export class UserProfile{
         this.setRoleChecked(false);
         this.setWeakVisionChecked(false);
         this.setComputerSelfEfficiacyChecked(false);
+       
     };
 
     // Set role of user
@@ -83,6 +87,13 @@ export class UserProfile{
         return this.language;
     }
 
+    public getColorBlind(): boolean {
+        return this.isColorBlind;
+    }
+
+    public setColorBlind(v:boolean) {
+        this.isColorBlind = v;
+    };
     // Getters and Setters for flags that indicate if rule was already fired once
     public setRoleChecked(v: boolean){
         this.roleChecked = v;
@@ -114,5 +125,4 @@ export class UserProfile{
     public getLangChecked(){
         return this.adminChecked;
     };
-
 }

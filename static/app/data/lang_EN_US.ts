@@ -40,7 +40,7 @@ export var lang_EN_US: LangString[] = [
 	
     {key: 'vBookInfo', text:'Book Info'},
     {key: 'vBookStatus', text:'Status'},
-	{key: 'dueDate', text:'due on'},
+	{key: 'dueDate', text:'Due on'},
 	
     {key: 'vStudentId', text:'Student ID'},
     {key: 'vStudentFirstname', text:'Firstname'},
@@ -66,6 +66,7 @@ export var lang_EN_US: LangString[] = [
     {key: 'vDueDate', text:'Until'},
 	
     {key: 'bookReservations', text:'Reservations'},
-    {key: 'submitQuestion', text:'submit Question'},
-    {key: 'findClosestLocation', text:'find learning location'}
+    {key: 'submitQuestion', text:'Submit Question'},
+    {key: 'findClosestLocation', text:'Find learning location'},
+    {key: 'question', text:'Question'}
 ];

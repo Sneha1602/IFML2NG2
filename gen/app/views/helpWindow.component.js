@@ -1,5 +1,5 @@
 //
-// Created by IFML2NG2 on 2018/02/23 13:21:00
+// Created by IFML2NG2 on 2018/03/13 15:33:20
 //
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -41,6 +41,7 @@ var HelpWindowComponent = (function () {
     };
     HelpWindowComponent.prototype.submitQuestionActionAction = function () {
         // PROTECTED REGION ID _sCz-cFXAEee_i6NdnvfQJg.submitQuestionAction ENABLED START
+        this._router.navigate(['searchBooks']);
         // PROTECTED REGION END
     };
     HelpWindowComponent.prototype.findClosestLocation = function () {
