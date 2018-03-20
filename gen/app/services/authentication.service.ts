@@ -1,6 +1,6 @@
 		import { Injectable } from '@angular/core';
 		import { Router } from '@angular/router';
-		import { BingSpeechClient } from 'bingspeech-api-client';
+	
 	
 		
 		//import { ProfileService } from '../services/profile.service';
@@ -28,7 +28,7 @@
 		export class AuthenticationService {
 		
 		  public isLoggedIn: boolean;
-			public speak: BingSpeechClient;
+		
 		
 		  constructor(
 				private _router: Router

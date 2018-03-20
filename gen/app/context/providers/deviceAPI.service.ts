@@ -32,69 +32,55 @@ export class DeviceAPIService {
 	public deviceTypeSubject: Observable<string> = this._deviceTypeSubject.asObservable();
 	
 	// PROTECTED REGION ID deviceAPI ENABLED START
-    private acceleartionAvg = 0.5;      // helper for moving average with magic starting value
-    // private i = 0;                    // helper for debugging
+private acceleartionAvg = 0.5;      // helper for moving average with magic starting value
+private i = 0;                    // helper for debugging
 	// PROTECTED REGION END
 	
 	constructor(){
 		// PROTECTED REGION ID constructor ENABLED START
 
-        //Ambientlight not implemented!!
-        // window.addEventListener('devicelight', event => {
+    // Updates Movement information for vertical movement
+    window.addEventListener("devicemotion", event => {
 
-        //     if (event.value > 300) {
-        //         this.ambientLight = 2;
-        //     }else if(event.value > 100){
-        //             this.ambientLight = 1;
-        //     }else{
-        //         this.ambientLight = 0;
-        //     }
+        /*  x,y,z are the accelerations on different axis.
+            All combined have a value in still position of ~13.
+            This is due acceleration of gravtiy.
+            If the device is shaken or moved the value rises.                
+        */
+        
+        var x = event.accelerationIncludingGravity.x;
+        var y = event.accelerationIncludingGravity.y;
+        var z = event.accelerationIncludingGravity.z;
 
-        //     this.getAmbientLight();
-        // });
+        var w = y+z+x;
 
-        // Updates Movement information for vertical movement
-        window.addEventListener("devicemotion", event => {
+        /*  If the combined acceleration rises above a level
+            a moving average is increased. All the used magic values and threshold
+            are eperimental and turned out to work fine
+        */
 
-            /*  x,y,z are the accelerations on different axis.
-                All combined have a value in still position of ~13.
-                This is due acceleration of gravtiy.
-                If the device is shaken or moved the value rises.                
-            */
-            
-            var x = event.accelerationIncludingGravity.x;
-            var y = event.accelerationIncludingGravity.y;
-			var z = event.accelerationIncludingGravity.z;
+        this.acceleartionAvg = this.acceleartionAvg*24;
+        if(w > 14 || w < 8.5){
+            this.acceleartionAvg += 100;
+        }
+        this.acceleartionAvg = this.acceleartionAvg/25;
 
-			var w = y+z+x;
+         if(this.i == 100){
+             console.log(this.acceleartionAvg);
+             this.i=0;
+         }else{
+             this.i++;
+         }
 
-            /*  If the combined acceleration rises above a level
-                a moving average is increased. All the used magic values and threshold
-                are eperimental and turned out to work fine
-            */
+        if(this.acceleartionAvg >= 1){
+            this.movement = 0;
+        }else if(this.acceleartionAvg >= 0.5){
+            this.movement = 1;
+        }else{
+            this.movement = 2;
+        }
 
-            this.acceleartionAvg = this.acceleartionAvg*24;
-            if(w > 14 || w < 8.5){
-                this.acceleartionAvg += 100;
-            }
-            this.acceleartionAvg = this.acceleartionAvg/25;
-
-            // if(this.i == 100){
-            //     console.log(this.acceleartionAvg);
-            //     this.i=0;
-            // }else{
-            //     this.i++;
-            // }
-
-            if(this.acceleartionAvg >= 1){
-                this.movement = 2;
-            }else if(this.acceleartionAvg >= 0.5){
-                this.movement = 1;
-            }else{
-                this.movement = 0;
-            }
-
-        });
+    });
 
 
 
@@ -104,15 +90,15 @@ export class DeviceAPIService {
 	getLanguage(){
 		
 		// PROTECTED REGION ID language ENABLED START
-            switch(navigator.language){
-                case "de": this.language = Language.german; break;
+        switch(navigator.language){
+            case "de": this.language = Language.german; break;
 
-                case "en"||"en-us": this.language = Language.english; break;
+            case "en"||"en-us": this.language = Language.english; break;
 
-                case "it": this.language = Language.italian; break;
+            case "it": this.language = Language.italian; break;
 
-                default: this.language = Language.english;
-            }
+            default: this.language = Language.english;
+        }
 		// PROTECTED REGION END
 		
 		this._languageSubject.next(this.language);
@@ -135,11 +121,11 @@ export class DeviceAPIService {
 	getDeviceType(){
 		
 		// PROTECTED REGION ID deviceType ENABLED START
-            if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini|Mobile/.test(navigator.userAgent)){
-                this.deviceType = "mobile";
-            }else{
-                this.deviceType = "desktop";
-            }
+        if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini|Mobile/.test(navigator.userAgent)){
+            this.deviceType = "atm"; // for demonstration purposes
+        }else{
+            this.deviceType = "desktop";
+        }
 		// PROTECTED REGION END
 		
 		this._deviceTypeSubject.next(this.deviceType);

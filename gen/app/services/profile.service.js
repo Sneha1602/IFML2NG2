@@ -85,6 +85,11 @@ var ProfileService = (function () {
         localStorage.setItem('profile', this.profile.toJSON());
         this.onModified();
     };
+    ProfileService.prototype.setAge = function (v) {
+        this.profile.getUser().setAge(v);
+        localStorage.setItem('profile', this.profile.toJSON());
+        this.onModified();
+    };
     ProfileService.prototype.getProfile = function () {
         return this.profile;
     };

@@ -55,11 +55,10 @@ class IndexGenerator extends AbstractFileGenerator<String> {
 		
 		  <!-- 4. Display the application -->
 		  
-		  
+		   <body>
 		  	<h3>«it»</h3>
 		    <my-app></my-app>
-		  </body>
-		
+		 </body>
 		</html>
 		'''
 	}

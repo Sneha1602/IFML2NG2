@@ -45,13 +45,13 @@ export class NoolsService {
 				$("#_MjqscFW_Eee_i6NdnvfQJg").hide();
 				$("#_jZkNwIC2Eea2S59Os6LSKA").show();
 			});
-			flow.rule("Movement High", {salience:2},[Profile,"m","m.getEnvironment().getMovement() >= 1"], function(facts){
+			flow.rule("Movement High", {salience:3},[Profile,"m","m.getEnvironment().getMovement() >= 1"], function(facts){
 				$('#_gNqwUIXWEeaLl5C1A6b47w').removeClass('sbig').removeClass('ssmall');
 				$('#_gNqwUIXWEeaLl5C1A6b47w').addClass('ssmall');
 				$('#_gNqwUIXWEeaLl5C1A6b47w').removeClass('cblue').removeClass('cred').removeClass('cgreen').removeClass('cgrey');
 				$('#_gNqwUIXWEeaLl5C1A6b47w').addClass('cred');
 			});
-			flow.rule("Movement Low", {salience:2},[Profile,"m","m.getEnvironment().getMovement() < 1"], function(facts){
+			flow.rule("Movement Low", {salience:3},[Profile,"m","m.getEnvironment().getMovement() < 1"], function(facts){
 				$('#_gNqwUIXWEeaLl5C1A6b47w').removeClass('cblue').removeClass('cred').removeClass('cgreen').removeClass('cgrey');
 				$('#_gNqwUIXWEeaLl5C1A6b47w').addClass('cgreen');
 				$('#_gNqwUIXWEeaLl5C1A6b47w').removeClass('sbig').removeClass('ssmall');
@@ -59,9 +59,9 @@ export class NoolsService {
 				$('#_LCX6cIXaEea82rBnn6BioA').removeClass('dblue').removeClass('dred').removeClass('dgreen').removeClass('dgrey');
 				$('#_LCX6cIXaEea82rBnn6BioA').addClass('dred');
 			});
-			flow.rule("Platform Desktop Color Blind", {salience:6},[Profile,"m","(m.getApp().getUserRole() == 'staff' && m.getPlatform().getDeviceType() == 'desktop')"], function(facts){
+			flow.rule("Platform Desktop Color Blind Age Less", {salience:5},[Profile,"m","(m.getApp().getUserRole() == 'student' && m.getPlatform().getDeviceType() == 'desktop')"], function(facts){
 				_DisplayPropertiesService.setProperty('headerBarClass','row backgroundPrimary divLine borderPrimary');
-				_DisplayPropertiesService.setProperty('routerOutletClass','col-md-10');
+				_DisplayPropertiesService.setProperty('routerOutletClass','col-md-10 textSecondary');
 				_DisplayPropertiesService.setProperty('hideOnMobile','');
 				_DisplayPropertiesService.setProperty('navbarContainerClass','sidebar-navbar col-md-2 backgroundPrimary borderPrimary');
 				_DisplayPropertiesService.setProperty('navbarWrapperClass','sidebar-wrapper backgroundPrimary  borderPrimary');
@@ -71,9 +71,33 @@ export class NoolsService {
 				_DisplayPropertiesService.setProperty('searchInputGroupClass','input-group col-md-6 col-md-offset-4 backgroundPrimary backgroundPrimary ');
 				_DisplayPropertiesService.setProperty('isMobile',false);
 			});
-			flow.rule("Platform Desktop not Color ", {salience:6},[Profile,"m","(m.getApp().getUserRole() == 'student' && m.getPlatform().getDeviceType() == 'desktop')"], function(facts){
+			flow.rule("Platform Desktop Color Blind Age More", {salience:5},[Profile,"m","(m.getApp().getUserRole() == 'student' && m.getPlatform().getDeviceType() == 'desktop' && m.getUser().getAge() > 20)"], function(facts){
+				_DisplayPropertiesService.setProperty('headerBarClass','row backgroundPrimary divLine borderPrimary');
+				_DisplayPropertiesService.setProperty('routerOutletClass ','col-md-10 textPrimary zoom');
+				_DisplayPropertiesService.setProperty('hideOnMobile','');
+				_DisplayPropertiesService.setProperty('navbarContainerClass','sidebar-navbar col-md-2 backgroundPrimary borderPrimary');
+				_DisplayPropertiesService.setProperty('navbarWrapperClass','sidebar-wrapper backgroundPrimary  borderPrimary');
+				_DisplayPropertiesService.setProperty('navbarHeaderClass','hideElement backgroundPrimary borderPrimary');
+				_DisplayPropertiesService.setProperty('navbarCollapseClass','backgroundPrimary  borderPrimary');
+				_DisplayPropertiesService.setProperty('navbarItemListClass','sidebar-nav textSecondary backgroundPrimary borderPrimary');
+				_DisplayPropertiesService.setProperty('searchInputGroupClass','input-group col-md-6 col-md-offset-4 backgroundPrimary backgroundPrimary ');
+				_DisplayPropertiesService.setProperty('isMobile',false);
+			});
+			flow.rule("Platform Desktop not Color Age less", {salience:6},[Profile,"m","(m.getApp().getUserRole() == 'staff' && m.getPlatform().getDeviceType() == 'desktop')"], function(facts){
 				_DisplayPropertiesService.setProperty('headerBarClass','row backgroundSecondary divLine borderPrimary');
-				_DisplayPropertiesService.setProperty('routerOutletClass','col-md-10');
+				_DisplayPropertiesService.setProperty('routerOutletClass','col-md-10 textSecondary');
+				_DisplayPropertiesService.setProperty('hideOnMobile','');
+				_DisplayPropertiesService.setProperty('navbarContainerClass','sidebar-navbar col-md-2 backgroundSecondary borderPrimary');
+				_DisplayPropertiesService.setProperty('navbarWrapperClass','sidebar-wrapper backgroundSecondary  borderPrimary');
+				_DisplayPropertiesService.setProperty('navbarHeaderClass','hideElement backgroundSecondary borderSecondary');
+				_DisplayPropertiesService.setProperty('navbarCollapseClass','backgroundSecondary  borderPrimary');
+				_DisplayPropertiesService.setProperty('navbarItemListClass','sidebar-nav textSecondary backgroundSecondary borderSecondary');
+				_DisplayPropertiesService.setProperty('searchInputGroupClass','input-group col-md-6 col-md-offset-4 backgroundSecondary backgroundPrimary ');
+				_DisplayPropertiesService.setProperty('isMobile',false);
+			});
+			flow.rule("Platform Desktop not Color Age more", {salience:6},[Profile,"m","(m.getApp().getUserRole() == 'staff' && m.getPlatform().getDeviceType() == 'desktop' && m.getUser().getAge() > 20)"], function(facts){
+				_DisplayPropertiesService.setProperty('headerBarClass','row backgroundSecondary divLine borderPrimary');
+				_DisplayPropertiesService.setProperty('routerOutletClass','col-md-10 textPrimary zoom');
 				_DisplayPropertiesService.setProperty('hideOnMobile','');
 				_DisplayPropertiesService.setProperty('navbarContainerClass','sidebar-navbar col-md-2 backgroundSecondary borderPrimary');
 				_DisplayPropertiesService.setProperty('navbarWrapperClass','sidebar-wrapper backgroundSecondary  borderPrimary');
@@ -120,12 +144,6 @@ export class NoolsService {
 			});
 			flow.rule("Navigation Unregistered", {salience:1},[Profile,"m","(m.getApp().getUserRole() != 'staff' && m.getApp().getUserRole() != 'student')"], function(facts){
 				_DisplayPropertiesService.clearNavigation();
-			});
-			flow.rule("Age", {salience:2},[Profile,"m","m.getUser().getAge() >= 50"], function(facts){
-				_DisplayPropertiesService.setProperty('body','textPrimary backgroundPrimary');
-			});
-			flow.rule("Age less than", {salience:2},[Profile,"m","m.getUser().getAge() <= 49"], function(facts){
-				_DisplayPropertiesService.setProperty('body','textSecondary backgroundPrimary');
 			});
 		});
 	}

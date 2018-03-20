@@ -1,5 +1,5 @@
 <!--
-   Created by IFML2NG2 on 2018/03/13 15:33:20
+   Created by IFML2NG2 on 2018/03/20 04:09:21
 -->
 
 <div class="col-md-12">
@@ -88,9 +88,9 @@
 	 			</table>
 	 		</div>
 	 	</div>
-	 	<button type="button" class="btn btn-default" (click)="issueBook()" *ngIf="_authenticationService.boolCheckPrivilegesIncludeOne([{role:'staff'}])" [ngClass]="{disabled: !isSelectedBookBinding}">{{_resourceService.getLangString('issueBook')}}</button>
-	 	<button type="button" class="btn btn-default" (click)="reserveBook()" *ngIf="_authenticationService.boolCheckPrivilegesIncludeOne([{role:'student'}])" [ngClass]="{disabled: !isSelectedBookBinding}">{{_resourceService.getLangString('reserveBook')}}</button>
-	 	<button type="button" class="btn btn-default" (click)="returnBook()" *ngIf="_authenticationService.boolCheckPrivilegesIncludeOne([{role:'staff'}])" [ngClass]="{disabled: !isSelectedBookBinding}">{{_resourceService.getLangString('returnBook')}}</button>
+	 	<button class="btn btn-default" type="button" (click)="issueBook()" *ngIf="_authenticationService.boolCheckPrivilegesIncludeOne([{role:'staff'}])" [ngClass]="{disabled: !isSelectedBookBinding}">{{_resourceService.getLangString('issueBook')}}</button>
+	 	<button class="btn btn-default" type="button" (click)="reserveBook()" *ngIf="_authenticationService.boolCheckPrivilegesIncludeOne([{role:'student'}])" [ngClass]="{disabled: !isSelectedBookBinding}">{{_resourceService.getLangString('reserveBook')}}</button>
+	 	<button class="btn btn-default" type="button" (click)="returnBook()" *ngIf="_authenticationService.boolCheckPrivilegesIncludeOne([{role:'staff'}])" [ngClass]="{disabled: !isSelectedBookBinding}">{{_resourceService.getLangString('returnBook')}}</button>
 	 	</div>
 	</div>
 </div>

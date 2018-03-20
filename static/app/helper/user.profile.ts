@@ -6,7 +6,8 @@ export class UserProfile{
     private weakVision: boolean;
     private computerSelfEfficiacy: string;
     private language: string;
-    
+    private age: number;
+     
 
     private roleChecked: boolean;
     private langChecked: boolean;
@@ -21,6 +22,7 @@ export class UserProfile{
         this.computerSelfEfficiacy = c;
         this.isAdmin = false;
         this.isColorBlind = false;
+        
         
         this.language = 'enus';
 
@@ -125,4 +127,10 @@ export class UserProfile{
     public getLangChecked(){
         return this.adminChecked;
     };
+    public setAge(v: number){
+        this.age = v;
+    };
+    public getAge(){
+        return this.age;
+    }
 }

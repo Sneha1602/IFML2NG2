@@ -96,6 +96,12 @@ export class ProfileService {
     this.onModified();
   }
 
+  public setAge(v: number){
+    this.profile.getUser().setAge(v);
+    localStorage.setItem('profile', this.profile.toJSON());
+    this.onModified();
+  }
+
   public getProfile(){
     return this.profile;
   }

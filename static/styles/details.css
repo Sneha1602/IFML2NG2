@@ -95,7 +95,7 @@
 
 .dsmall.table{
     margin: 2%;
-    overflow: hidden;
+    overflow: auto;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
     border-radius: 12px;
@@ -115,7 +115,7 @@
 
 .dbig.table{
     margin: 2%;
-    overflow: hidden;
+    overflow: auto;
     -webkit-border-radius: 16px;
     -moz-border-radius: 16px;
     border-radius: 16px;

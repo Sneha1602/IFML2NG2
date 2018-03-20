@@ -2,7 +2,7 @@ export class DisplayProperties {
     private type: string;
     private role: string;
 	private temp: any;
-    private body: any;
+    private div: any;
     // [{path:<path>,text:<link text>}]
     private navigation: any;
 
@@ -11,6 +11,7 @@ export class DisplayProperties {
     public routerOutletClass: string;
     public hideOnMobile: string;
     public hideOnDesktop: string;
+    public buttonClass: string;
 
     //tables
     public tableClass: string;
@@ -41,10 +42,12 @@ export class DisplayProperties {
         this.routerOutletClass = '';
         this.hideOnMobile = '';
         this.hideOnDesktop = '';
-        this.body = '';
+        this.div = '';
+        this.buttonClass = '';
 
         //tables
         this.tableClass = 'table table-striped table-hover table-condensed'
+        this.buttonClass = 'btn btn-default btn-md'
 
         //navigation
         this.navbarContainerClass = '';

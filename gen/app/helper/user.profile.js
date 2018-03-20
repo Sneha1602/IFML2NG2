@@ -114,6 +114,13 @@ var UserProfile = (function () {
         return this.adminChecked;
     };
     ;
+    UserProfile.prototype.setAge = function (v) {
+        this.age = v;
+    };
+    ;
+    UserProfile.prototype.getAge = function () {
+        return this.age;
+    };
     return UserProfile;
 }());
 exports.UserProfile = UserProfile;

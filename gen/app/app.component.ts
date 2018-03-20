@@ -17,8 +17,8 @@
 				AuthenticationService
 				,ContextControllerService
 				],
-		  template: `
-				<noolstestbar></noolstestbar>
+			template: `
+			<noolstestbar></noolstestbar>
 		    <div id="desktopViewContainter" class="container">
 		      <div id="headerBar" [ngClass]="_displayPropertiesService.displayProperties.headerBarClass" class="row" style="margin-right:0px;padding-left:0px;padding-right:0px;">
 		        <div class="col-md-12" style="width:100%; padding-left:0;padding-right:0px;">

@@ -18,7 +18,6 @@ var Language_1 = require('../types/Language');
 // PROTECTED REGION ID general ENABLED START
 // PROTECTED REGION END
 var DeviceAPIService = (function () {
-    // private i = 0;                    // helper for debugging
     // PROTECTED REGION END
     function DeviceAPIService() {
         // PROTECTED REGION ID constructor ENABLED START
@@ -33,17 +32,7 @@ var DeviceAPIService = (function () {
         this.deviceTypeSubject = this._deviceTypeSubject.asObservable();
         // PROTECTED REGION ID deviceAPI ENABLED START
         this.acceleartionAvg = 0.5; // helper for moving average with magic starting value
-        //Ambientlight not implemented!!
-        // window.addEventListener('devicelight', event => {
-        //     if (event.value > 300) {
-        //         this.ambientLight = 2;
-        //     }else if(event.value > 100){
-        //             this.ambientLight = 1;
-        //     }else{
-        //         this.ambientLight = 0;
-        //     }
-        //     this.getAmbientLight();
-        // });
+        this.i = 0; // helper for debugging
         // Updates Movement information for vertical movement
         window.addEventListener("devicemotion", function (event) {
             /*  x,y,z are the accelerations on different axis.
@@ -64,20 +53,21 @@ var DeviceAPIService = (function () {
                 _this.acceleartionAvg += 100;
             }
             _this.acceleartionAvg = _this.acceleartionAvg / 25;
-            // if(this.i == 100){
-            //     console.log(this.acceleartionAvg);
-            //     this.i=0;
-            // }else{
-            //     this.i++;
-            // }
+            if (_this.i == 100) {
+                console.log(_this.acceleartionAvg);
+                _this.i = 0;
+            }
+            else {
+                _this.i++;
+            }
             if (_this.acceleartionAvg >= 1) {
-                _this.movement = 2;
+                _this.movement = 0;
             }
             else if (_this.acceleartionAvg >= 0.5) {
                 _this.movement = 1;
             }
             else {
-                _this.movement = 0;
+                _this.movement = 2;
             }
         });
         // PROTECTED REGION END
@@ -112,7 +102,7 @@ var DeviceAPIService = (function () {
     DeviceAPIService.prototype.getDeviceType = function () {
         // PROTECTED REGION ID deviceType ENABLED START
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini|Mobile/.test(navigator.userAgent)) {
-            this.deviceType = "mobile";
+            this.deviceType = "atm"; // for demonstration purposes
         }
         else {
             this.deviceType = "desktop";
