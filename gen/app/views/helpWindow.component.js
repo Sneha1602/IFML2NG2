@@ -1,7 +1,7 @@
-//
-// Created by IFML2NG2 on 2018/03/21 19:27:54
-//
 "use strict";
+//
+// Created by IFML2NG2 on 2018/04/10 22:59:16
+//
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -11,19 +11,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 // Angular Imports
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var router_2 = require('@angular/router');
-var common_1 = require('@angular/common');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var router_2 = require("@angular/router");
+var common_1 = require("@angular/common");
 // Service Imports
-var logger_service_1 = require('../services/logger.service');
-var authentication_service_1 = require('../services/authentication.service');
-var data_service_1 = require('../services/data.service');
-var displayProperties_service_1 = require('../services/displayProperties.service');
-var resource_service_1 = require('../services/resource.service');
+var logger_service_1 = require("../services/logger.service");
+var authentication_service_1 = require("../services/authentication.service");
+var data_service_1 = require("../services/data.service");
+var displayProperties_service_1 = require("../services/displayProperties.service");
+var resource_service_1 = require("../services/resource.service");
 // domain concept imports
-var HelpWindowComponent = (function () {
+var HelpWindowComponent = /** @class */ (function () {
     // PROTECTED REGION ID _dPjFoFWYEee_i6NdnvfQJg.helpWindow ENABLED START
     // PROTECTED REGION END
     function HelpWindowComponent(_router, _route, _loggerService, _authenticationService, _dataService, _displayPropertiesService, _resourceService) {
@@ -65,8 +66,14 @@ var HelpWindowComponent = (function () {
             providers: [logger_service_1.LoggerService, displayProperties_service_1.DisplayPropertiesService, authentication_service_1.AuthenticationService, data_service_1.DataService],
             directives: [common_1.NgClass],
             pipes: []
-        }), 
-        __metadata('design:paramtypes', [router_2.Router, router_1.ActivatedRoute, logger_service_1.LoggerService, authentication_service_1.AuthenticationService, data_service_1.DataService, displayProperties_service_1.DisplayPropertiesService, resource_service_1.ResourceService])
+        }),
+        __metadata("design:paramtypes", [router_2.Router,
+            router_1.ActivatedRoute,
+            logger_service_1.LoggerService,
+            authentication_service_1.AuthenticationService,
+            data_service_1.DataService,
+            displayProperties_service_1.DisplayPropertiesService,
+            resource_service_1.ResourceService])
     ], HelpWindowComponent);
     return HelpWindowComponent;
 }());

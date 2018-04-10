@@ -66,6 +66,10 @@ import { Weather } from '../context/types/Weather';
                             <td>Weather:</td>
                             <td>{{weather}}</td> 
                         </tr>
+                        <tr>
+                            <td>Brightness:</td>
+                            <td>{{ambientLight}}</td> 
+                        </tr>
                     </table>
                 </div>
                 <div class="col-md-3">

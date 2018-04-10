@@ -1,5 +1,6 @@
 "use strict";
-var DisplayProperties = (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var DisplayProperties = /** @class */ (function () {
     function DisplayProperties() {
         this.type = '';
         this.role = '';
@@ -11,6 +12,7 @@ var DisplayProperties = (function () {
         this.hideOnDesktop = '';
         this.div = '';
         this.buttonClass = '';
+        this.bodyClass = '';
         //tables
         this.tableClass = 'table table-striped table-hover table-condensed';
         this.buttonClass = 'btn btn-default btn-md';

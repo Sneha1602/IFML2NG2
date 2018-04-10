@@ -1,15 +1,16 @@
 "use strict";
-var router_1 = require('@angular/router');
-var searchBooks_component_1 = require('./views/searchBooks.component');
-var login_component_1 = require('./views/login.component');
-var home_component_1 = require('./views/home.component');
-var lendingForm_component_1 = require('./views/lendingForm.component');
-var lentBooks_component_1 = require('./views/lentBooks.component');
-var students_component_1 = require('./views/students.component');
-var studentDetails_component_1 = require('./views/studentDetails.component');
-var bookReservations_component_1 = require('./views/bookReservations.component');
-var helpWindow_component_1 = require('./views/helpWindow.component');
-var administration_component_1 = require('./views/administration.component');
+Object.defineProperty(exports, "__esModule", { value: true });
+var router_1 = require("@angular/router");
+var searchBooks_component_1 = require("./views/searchBooks.component");
+var login_component_1 = require("./views/login.component");
+var home_component_1 = require("./views/home.component");
+var lendingForm_component_1 = require("./views/lendingForm.component");
+var lentBooks_component_1 = require("./views/lentBooks.component");
+var students_component_1 = require("./views/students.component");
+var studentDetails_component_1 = require("./views/studentDetails.component");
+var bookReservations_component_1 = require("./views/bookReservations.component");
+var helpWindow_component_1 = require("./views/helpWindow.component");
+var administration_component_1 = require("./views/administration.component");
 exports.routes = [
     {
         path: 'searchBooks',

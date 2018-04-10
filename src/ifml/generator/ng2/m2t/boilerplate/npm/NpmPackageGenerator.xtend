@@ -44,7 +44,7 @@ class NpmPackageGenerator extends AbstractFileGenerator<String> {
 		  "devDependencies": {
 		    "concurrently": "^2.0.0",
 		    "lite-server": "^2.2.0",
-		    "typescript": "^1.8.10",
+		    "typescript": "^2.8.1",
 		    "typings": "^1.0.4"
 		  }
 		}

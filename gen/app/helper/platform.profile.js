@@ -1,6 +1,7 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // platform context
-var PlatformProfile = (function () {
+var PlatformProfile = /** @class */ (function () {
     function PlatformProfile(type) {
         this.type = type;
     }

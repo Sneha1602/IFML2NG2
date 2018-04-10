@@ -1,6 +1,7 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // environment context
-var EnvironmentProfile = (function () {
+var EnvironmentProfile = /** @class */ (function () {
     function EnvironmentProfile(brightnessLevel) {
         this.brightnessLevel = brightnessLevel;
     }

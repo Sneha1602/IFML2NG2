@@ -8,13 +8,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var bookLending_1 = require('../data/bookLending');
-var mock_books_1 = require('../data/mock-books');
-var mock_bookLendings_1 = require('../data/mock-bookLendings');
-var mock_bookReservations_1 = require('../data/mock-bookReservations');
-var mock_students_1 = require('../data/mock-students');
-var DataService = (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var bookLending_1 = require("../data/bookLending");
+var mock_books_1 = require("../data/mock-books");
+var mock_bookLendings_1 = require("../data/mock-bookLendings");
+var mock_bookReservations_1 = require("../data/mock-bookReservations");
+var mock_students_1 = require("../data/mock-students");
+var DataService = /** @class */ (function () {
     function DataService() {
         if (localStorage.getItem('booklendings') === null) {
             localStorage.setItem('booklendings', JSON.stringify(mock_bookLendings_1.BOOKLENDINGS));
@@ -156,8 +157,8 @@ var DataService = (function () {
         return -1;
     };
     DataService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [])
     ], DataService);
     return DataService;
 }());

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.BOOKS = [
     { bookId: "1", bookStatus: false, bookInfo: { isbn: '0201038129', title: 'Surreal Numbers', author: 'Knuth' } },
     { bookId: "2", bookStatus: false, bookInfo: { isbn: '0262162091', title: 'Types and Programming Languages', author: 'Pierce' } },

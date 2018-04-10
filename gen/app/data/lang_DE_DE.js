@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.lang_DE_DE = [
     { key: 'books', text: 'Durchsuche Bücher' },
     { key: 'students', text: 'Durchsuche Studenten' },

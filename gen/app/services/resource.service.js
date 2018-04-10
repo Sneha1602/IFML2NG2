@@ -8,13 +8,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var lowResImages_1 = require('../data/lowResImages');
-var highResImages_1 = require('../data/highResImages');
-var lang_EN_US_1 = require('../data/lang_EN_US');
-var lang_DE_DE_1 = require('../data/lang_DE_DE');
-var lang_IT_IT_1 = require('../data/lang_IT_IT');
-var ResourceService = (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var lowResImages_1 = require("../data/lowResImages");
+var highResImages_1 = require("../data/highResImages");
+var lang_EN_US_1 = require("../data/lang_EN_US");
+var lang_DE_DE_1 = require("../data/lang_DE_DE");
+var lang_IT_IT_1 = require("../data/lang_IT_IT");
+var ResourceService = /** @class */ (function () {
     function ResourceService() {
         this.setImageFile("low");
         this.setLangFile("enus");
@@ -62,8 +63,8 @@ var ResourceService = (function () {
         return key;
     };
     ResourceService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [])
     ], ResourceService);
     return ResourceService;
 }());

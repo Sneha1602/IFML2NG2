@@ -18,8 +18,9 @@
 				,ContextControllerService
 				],
 			template: `
+			<div id="bodydiv" [ngClass]="_displayPropertiesService.displayProperties.bodyClass">
 			<noolstestbar></noolstestbar>
-		    <div id="desktopViewContainter" class="container">
+			   <div id="desktopViewContainter" class="container">
 		      <div id="headerBar" [ngClass]="_displayPropertiesService.displayProperties.headerBarClass" class="row" style="margin-right:0px;padding-left:0px;padding-right:0px;">
 		        <div class="col-md-12" style="width:100%; padding-left:0;padding-right:0px;">
 							<a href="\" class="btn btn-link"><img src="./resources/images/logo_transparent.png" alt="LibSoft" height="115" width="175"></a>
@@ -33,8 +34,9 @@
 							<router-outlet></router-outlet>
 						</div>
 		      </div>
-		    </div>
-		  `,
+				</div>
+			</div>	
+			 `,
 		  directives: [ROUTER_DIRECTIVES, NavigationComponent, NoolsTestBarComponent, NgClass]
 		})
 		

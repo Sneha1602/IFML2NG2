@@ -49,11 +49,7 @@ export class DisplayPropertiesService {
     localStorage.setItem('displayProperties', JSON.stringify(this.displayProperties));
   }
 
-  public setTableClass(v:string){
-    this.displayProperties.setTableClass(v);
-    localStorage.setItem('displayProperties', JSON.stringify(this.displayProperties));
-  }
-
+ 
   // set navigation for user
   public setNavigation(nav: Object[]){
     this.displayProperties.setNavigation(nav);

@@ -12,6 +12,7 @@ export class DisplayProperties {
     public hideOnMobile: string;
     public hideOnDesktop: string;
     public buttonClass: string;
+    public bodyClass: string;
 
     //tables
     public tableClass: string;
@@ -44,7 +45,7 @@ export class DisplayProperties {
         this.hideOnDesktop = '';
         this.div = '';
         this.buttonClass = '';
-
+        this.bodyClass = '';
         //tables
         this.tableClass = 'table table-striped table-hover table-condensed'
         this.buttonClass = 'btn btn-default btn-md'

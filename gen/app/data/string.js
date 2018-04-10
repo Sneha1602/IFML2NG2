@@ -1,5 +1,6 @@
 "use strict";
-var LangString = (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var LangString = /** @class */ (function () {
     function LangString(key, text) {
         this.key = key;
         this.text = text;

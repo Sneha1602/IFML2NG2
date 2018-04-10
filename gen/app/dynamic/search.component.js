@@ -1,7 +1,7 @@
-//
-// Created by IFML2NG2 on 2018/03/21 19:27:54
-//
 "use strict";
+//
+// Created by IFML2NG2 on 2018/04/10 22:59:16
+//
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -11,15 +11,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 // Angular Imports
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 // Service Imports
-var logger_service_1 = require('../services/logger.service');
-var authentication_service_1 = require('../services/authentication.service');
-var data_service_1 = require('../services/data.service');
-var displayProperties_service_1 = require('../services/displayProperties.service');
-var resource_service_1 = require('../services/resource.service');
-var SearchComponent = (function () {
+var logger_service_1 = require("../services/logger.service");
+var authentication_service_1 = require("../services/authentication.service");
+var data_service_1 = require("../services/data.service");
+var displayProperties_service_1 = require("../services/displayProperties.service");
+var resource_service_1 = require("../services/resource.service");
+var SearchComponent = /** @class */ (function () {
     function SearchComponent(_loggerService, _authenticationService, _dataService, _displayPropertiesService, _resourceService) {
         this._loggerService = _loggerService;
         this._authenticationService = _authenticationService;
@@ -49,23 +50,27 @@ var SearchComponent = (function () {
         this.onFilterUpdate.emit(this.advancedFilter);
     };
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Array)
+        core_1.Input(),
+        __metadata("design:type", Array)
     ], SearchComponent.prototype, "searchSpace", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
+        core_1.Input(),
+        __metadata("design:type", String)
     ], SearchComponent.prototype, "title", void 0);
     __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
+        core_1.Output(),
+        __metadata("design:type", Object)
     ], SearchComponent.prototype, "onFilterUpdate", void 0);
     SearchComponent = __decorate([
         core_1.Component({
             selector: 'search-component',
             templateUrl: 'app/dynamic/search.component.html'
-        }), 
-        __metadata('design:paramtypes', [logger_service_1.LoggerService, authentication_service_1.AuthenticationService, data_service_1.DataService, displayProperties_service_1.DisplayPropertiesService, resource_service_1.ResourceService])
+        }),
+        __metadata("design:paramtypes", [logger_service_1.LoggerService,
+            authentication_service_1.AuthenticationService,
+            data_service_1.DataService,
+            displayProperties_service_1.DisplayPropertiesService,
+            resource_service_1.ResourceService])
     ], SearchComponent);
     return SearchComponent;
 }());

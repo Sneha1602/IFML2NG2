@@ -8,8 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var LoggerService = (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var LoggerService = /** @class */ (function () {
     function LoggerService() {
     }
     LoggerService.prototype.log = function (entry) {
@@ -20,8 +21,8 @@ var LoggerService = (function () {
         window.alert(message);
     };
     LoggerService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [])
     ], LoggerService);
     return LoggerService;
 }());

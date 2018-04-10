@@ -1,6 +1,7 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // user context
-var UserProfile = (function () {
+var UserProfile = /** @class */ (function () {
     function UserProfile(r, w, c) {
         this.role = r;
         this.weakVision = w;

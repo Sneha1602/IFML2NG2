@@ -1,5 +1,6 @@
 "use strict";
-var BookReservation = (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var BookReservation = /** @class */ (function () {
     function BookReservation(reservedBy, reservedBook) {
         this.reservedBy = reservedBy;
         this.reservedBook = reservedBook;

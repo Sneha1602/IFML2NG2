@@ -1,5 +1,6 @@
 "use strict";
-var BookInfo = (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var BookInfo = /** @class */ (function () {
     function BookInfo(isbn, title, author) {
         this.isbn = isbn;
         this.title = title;

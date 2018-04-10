@@ -6,48 +6,62 @@ private i = 0;                    // helper for debugging
 
 // PROTECTED REGION ID constructor ENABLED START
 
-    // Updates Movement information for vertical movement
-    window.addEventListener("devicemotion", event => {
+//Ambientlight implemented!!
+window.addEventListener('devicelight', event => {
+    var lightLevel= event.value;
+    if (lightLevel > 300) {
+      this.ambientLight = 2;
+    } else if (lightLevel > 100) {
+       this.ambientLight = 1;
+   } else {
+     this.ambientLight = 0;
+   }
+  console.log("brightness" + this.ambientLight);
+  this.getAmbientLight();
+});
 
-        /*  x,y,z are the accelerations on different axis.
-            All combined have a value in still position of ~13.
-            This is due acceleration of gravtiy.
-            If the device is shaken or moved the value rises.                
-        */
-        
-        var x = event.accelerationIncludingGravity.x;
-        var y = event.accelerationIncludingGravity.y;
-        var z = event.accelerationIncludingGravity.z;
+// Updates Movement information for vertical movement
+window.addEventListener("devicemotion", event => {
 
-        var w = y+z+x;
+    /*  x,y,z are the accelerations on different axis.
+        All combined have a value in still position of ~13.
+        This is due acceleration of gravtiy.
+        If the device is shaken or moved the value rises.                
+    */
 
-        /*  If the combined acceleration rises above a level
-            a moving average is increased. All the used magic values and threshold
-            are eperimental and turned out to work fine
-        */
+    var x = event.accelerationIncludingGravity.x;
+    var y = event.accelerationIncludingGravity.y;
+    var z = event.accelerationIncludingGravity.z;
 
-        this.acceleartionAvg = this.acceleartionAvg*24;
-        if(w > 14 || w < 8.5){
-            this.acceleartionAvg += 100;
-        }
-        this.acceleartionAvg = this.acceleartionAvg/25;
+    var w = y + z + x;
 
-         if(this.i == 100){
-             console.log(this.acceleartionAvg);
-             this.i=0;
-         }else{
-             this.i++;
-         }
+    /*  If the combined acceleration rises above a level
+        a moving average is increased. All the used magic values and threshold
+        are eperimental and turned out to work fine
+    */
 
-        if(this.acceleartionAvg >= 1){
-            this.movement = 0;
-        }else if(this.acceleartionAvg >= 0.5){
-            this.movement = 1;
-        }else{
-            this.movement = 2;
-        }
+    this.acceleartionAvg = this.acceleartionAvg * 24;
+    if (w > 14 || w < 8.5) {
+        this.acceleartionAvg += 100;
+    }
+    this.acceleartionAvg = this.acceleartionAvg / 25;
 
-    });
+    if (this.i == 100) {
+        console.log(this.acceleartionAvg);
+        this.i = 0;
+    } else {
+        this.i++;
+    }
+
+    if (this.acceleartionAvg >= 1) {
+        this.movement = 0;
+    } else if (this.acceleartionAvg >= 0.5) {
+        this.movement = 1;
+    } else {
+        this.movement = 2;
+    }
+
+});
 
 
 
@@ -60,22 +74,22 @@ private i = 0;                    // helper for debugging
 
 
 // PROTECTED REGION ID language ENABLED START
-        switch(navigator.language){
-            case "de": this.language = Language.german; break;
+switch (navigator.language) {
+    case "de": this.language = Language.german; break;
 
-            case "en"||"en-us": this.language = Language.english; break;
+    case "en" || "en-us": this.language = Language.english; break;
 
-            case "it": this.language = Language.italian; break;
+    case "it": this.language = Language.italian; break;
 
-            default: this.language = Language.english;
-        }
+    default: this.language = Language.english;
+}
 // PROTECTED REGION END
 
 
 // PROTECTED REGION ID deviceType ENABLED START
-        if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini|Mobile/.test(navigator.userAgent)){
-            this.deviceType = "atm"; // for demonstration purposes
-        }else{
-            this.deviceType = "desktop";
-        }
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini|Mobile/.test(navigator.userAgent)) {
+    this.deviceType = "mobile"; // for demonstration purposes
+} else {
+    this.deviceType = "desktop";
+}
 // PROTECTED REGION END

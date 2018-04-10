@@ -8,15 +8,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var profile_1 = require('../helper/profile');
-var displayProperties_1 = require('../helper/displayProperties');
-var platform_profile_1 = require('../helper/platform.profile');
-var user_profile_1 = require('../helper/user.profile');
-var state_profile_1 = require('../helper/state.profile');
-var environment_profile_1 = require('../helper/environment.profile');
-var nools_service_1 = require('../services/nools.service');
-var ProfileService = (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var profile_1 = require("../helper/profile");
+var displayProperties_1 = require("../helper/displayProperties");
+var platform_profile_1 = require("../helper/platform.profile");
+var user_profile_1 = require("../helper/user.profile");
+var state_profile_1 = require("../helper/state.profile");
+var environment_profile_1 = require("../helper/environment.profile");
+var nools_service_1 = require("../services/nools.service");
+var ProfileService = /** @class */ (function () {
     function ProfileService(flow) {
         this.flow = flow;
         // check if profile configuration ist already saved in local storage
@@ -106,8 +107,8 @@ var ProfileService = (function () {
         });
     };
     ProfileService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [nools_service_1.NoolsService])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [nools_service_1.NoolsService])
     ], ProfileService);
     return ProfileService;
 }());

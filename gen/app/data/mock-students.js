@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.STUDENTS = [
     { studentId: '6701277', firstname: 'Hagen', lastname: 'Stahl', studentStatus: true },
     { studentId: '1231233', firstname: 'Richard', lastname: 'Roe', studentStatus: true },

@@ -1,11 +1,12 @@
 "use strict";
-var platform_profile_1 = require('../helper/platform.profile');
-var user_profile_1 = require('../helper/user.profile');
-var environment_profile_1 = require('../helper/environment.profile');
-var state_profile_1 = require('../helper/state.profile');
-var displayProperties_1 = require('../helper/displayProperties');
+Object.defineProperty(exports, "__esModule", { value: true });
+var platform_profile_1 = require("../helper/platform.profile");
+var user_profile_1 = require("../helper/user.profile");
+var environment_profile_1 = require("../helper/environment.profile");
+var state_profile_1 = require("../helper/state.profile");
+var displayProperties_1 = require("../helper/displayProperties");
 // instance of context model
-var Profile = (function () {
+var Profile = /** @class */ (function () {
     function Profile() {
         // initialize context profiles
         this.user = new user_profile_1.UserProfile('', false, 'false');

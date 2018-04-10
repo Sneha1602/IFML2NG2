@@ -1,6 +1,7 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // current application state
-var StateProfile = (function () {
+var StateProfile = /** @class */ (function () {
     function StateProfile() {
     }
     ;

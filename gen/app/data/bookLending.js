@@ -1,5 +1,6 @@
 "use strict";
-var BookLending = (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var BookLending = /** @class */ (function () {
     function BookLending(until, lentBook, lentBy) {
         this.until = until;
         this.lentBook = lentBook;

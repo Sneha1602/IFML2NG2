@@ -8,9 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var displayProperties_1 = require('../helper/displayProperties');
-var DisplayPropertiesService = (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var displayProperties_1 = require("../helper/displayProperties");
+var DisplayPropertiesService = /** @class */ (function () {
     function DisplayPropertiesService() {
         // check if profile configuration ist already saved in local storage
         if (localStorage.getItem('displayProperties') != null) {
@@ -47,10 +48,6 @@ var DisplayPropertiesService = (function () {
         this.displayProperties.setRole(v);
         localStorage.setItem('displayProperties', JSON.stringify(this.displayProperties));
     };
-    DisplayPropertiesService.prototype.setTableClass = function (v) {
-        this.displayProperties.setTableClass(v);
-        localStorage.setItem('displayProperties', JSON.stringify(this.displayProperties));
-    };
     // set navigation for user
     DisplayPropertiesService.prototype.setNavigation = function (nav) {
         this.displayProperties.setNavigation(nav);
@@ -77,8 +74,8 @@ var DisplayPropertiesService = (function () {
         localStorage.setItem('displayProperties', JSON.stringify(this.displayProperties));
     };
     DisplayPropertiesService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [])
     ], DisplayPropertiesService);
     return DisplayPropertiesService;
 }());
