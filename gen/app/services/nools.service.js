@@ -27,6 +27,9 @@ var NoolsService = /** @class */ (function () {
             flow.rule("Lang de-de", { salience: 1 }, [profile_1.Profile, "m", "m.getUser().getLanguage() == 0"], function (facts) {
                 _ResourceService.setLangFile("dede");
             });
+            flow.rule("Lang en-us", { salience: 1 }, [profile_1.Profile, "m", "m.getUser().getLanguage() == 1"], function (facts) {
+                _ResourceService.setLangFile("enus");
+            });
             flow.rule("User angry", { salience: 2 }, [profile_1.Profile, "m", "(m.getUser().getMood() == 1 && m.getApp().getMoodChecked() == false)"], function (facts) {
                 facts.m.getApp().setMoodChecked(true);
                 _DisplayPropertiesService.pushNavigation({ path: '/helpWindow', key: 'Service Point' });
