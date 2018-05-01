@@ -22,6 +22,7 @@ export var lang_DE_DE: LangString[] = [
     {key: 'issueBook', text:'Buch ausleihen'},
     {key: 'viewDetails', text:'Details ansehen'},
     {key: 'returnBook', text:'Buch zurücknehmen'},
+    {key: 'administration', text:'Verwaltung'},
 
     {key: 'search', text:'Suche nach...'},
 

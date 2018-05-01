@@ -24,7 +24,7 @@ var NoolsService = /** @class */ (function () {
         this._ResourceService = _ResourceService;
         this._DisplayPropertiesService = _DisplayPropertiesService;
         this.flow = nools.flow("Profile Evaluation", function (flow) {
-            flow.rule("Lang de-de", { salience: 1 }, [profile_1.Profile, "m", "m.getUser().getLanguage() == 'dede'"], function (facts) {
+            flow.rule("Lang de-de", { salience: 1 }, [profile_1.Profile, "m", "m.getUser().getLanguage() == 0"], function (facts) {
                 _ResourceService.setLangFile("dede");
             });
             flow.rule("User angry", { salience: 2 }, [profile_1.Profile, "m", "(m.getUser().getMood() == 1 && m.getApp().getMoodChecked() == false)"], function (facts) {

@@ -25,7 +25,7 @@ export class NoolsService {
 		private _ResourceService: ResourceService,
 		private _DisplayPropertiesService: DisplayPropertiesService){
 		this.flow = nools.flow("Profile Evaluation", function(flow){
-			flow.rule("Lang de-de", {salience:1},[Profile,"m","m.getUser().getLanguage() == 'dede'"], function(facts){
+			flow.rule("Lang de-de", {salience:1},[Profile,"m","m.getUser().getLanguage() == 0"], function(facts){
 				_ResourceService.setLangFile("dede");
 			});
 			flow.rule("User angry", {salience:2},[Profile,"m","(m.getUser().getMood() == 1 && m.getApp().getMoodChecked() == false)"], function(facts){
